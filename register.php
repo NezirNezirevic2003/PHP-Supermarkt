@@ -33,15 +33,15 @@ if (isset($_POST['submit'])) {
     <form class="row g-3 mt-5" action="<?php echo $_SERVER['PHP_SELF']  ?>" method="POST">
         <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Voornaam</label>
-            <input type="email" name="voornaam" class="form-control" id="inputEmail4">
+            <input type="text" name="voornaam" class="form-control" id="inputEmail4">
         </div>
         <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Achternaam</label>
-            <input type="password" name="achternaam" class="form-control" id="inputPassword4">
+            <input type="text" name="achternaam" class="form-control" id="inputPassword4">
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">E-mail</label>
-            <input type="text" name="email" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            <input type="email" name="email" class="form-control" id="inputAddress" placeholder="1234 Main St">
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">Wachtwoord</label>
