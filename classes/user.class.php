@@ -12,9 +12,9 @@ class User extends Dbh
         header('location: login.php');
     }
 
-    public function emptyInputLogin($voornaam, $achternaam)
+    public function emptyInputLogin($email, $wachtwoord)
     {
-        if (empty($voornaam) || empty($wachtwoord)) {
+        if (empty($email) || empty($wachtwoord)) {
             $result = true;
         } else {
             $result = false;
@@ -22,18 +22,18 @@ class User extends Dbh
         return $result;
     }
 
-    public function loginUser($voornaam, $wachtwoord)
+    public function loginUser($email, $wachtwoord)
     {
         $wachtwoord = $_POST['wachtwoord'];
-        $sql = "SELECT * FROM inloggen WHERE voornaam = ? AND wachtwoord = ? ";
+        $sql = "SELECT * FROM register WHERE email = ? AND wachtwoord = ? ";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$voornaam, $wachtwoord]);
+        $stmt->execute([$email, $wachtwoord]);
 
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($user['voornaam']) {
+        if ($user['email']) {
             if ($user['wachtwoord']) {
-                header('location: dashboard.php');
+                header('location: index.php');
             }
         } else {
             header('location: login.php?error=verkeerdelogin');
