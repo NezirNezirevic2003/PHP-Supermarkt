@@ -13,7 +13,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.php">
                 <img src="./assets/logo.png" alt="" width="35" height="31" class="d-inline-block align-top">
                 Supermarkt
             </a>
@@ -27,10 +27,10 @@
                         <a class="nav-link active" aria-current="page" href="#">Hoofdpagina</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                        <a class="nav-link" href="login.php">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Registreren</a>
+                        <a class="nav-link" href="register.php">Registreren</a>
                     </li>
                 </ul>
             </div>
