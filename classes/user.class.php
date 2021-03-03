@@ -22,16 +22,16 @@ class User extends Dbh
         return $result;
     }
 
-    public function loginUser($email, $wachtwoord)
+    public function loginUser($voornaam, $wachtwoord)
     {
         $wachtwoord = $_POST['wachtwoord'];
-        $sql = "SELECT * FROM register WHERE email = ? AND wachtwoord = ? ";
+        $sql = "SELECT * FROM register WHERE voornaam = ? AND wachtwoord = ? ";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$email, $wachtwoord]);
+        $stmt->execute([$voornaam, $wachtwoord]);
 
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($user['email']) {
+        if ($user['voornaam']) {
             if ($user['wachtwoord']) {
                 header('location: index.php');
             }

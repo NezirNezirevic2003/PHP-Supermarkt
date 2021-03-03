@@ -1,3 +1,7 @@
+<?php
+ini_set('session.gc_maxlifetime', 3600);
+session_set_cookie_params(3600);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,9 +20,11 @@ include "./templates/footer.php";
 if (isset($_POST['submit'])) {
 
     $user = new User();
-    $email = $_POST['email'];
+    $voornaam = $_POST['voornaam'];
     $wachtwoord = $_POST['wachtwoord'];
-    $user->loginUser($email, $wachtwoord);
+    $user->loginUser($voornaam, $wachtwoord);
+    $_SESSION['voornaam'] = $voornaam;
+    echo $email;
 }
 ?>
 
@@ -26,10 +32,10 @@ if (isset($_POST['submit'])) {
     <div class="container-sm">
         <form class="mt-5" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">E-mail</label>
-                <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                <label for="exampleInputEmail1" class="form-label">Voornaam</label>
+                <input type="text" name="voornaam" class="form-control" id="exampleInputEmail1"
                     aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">Voer hier uw gebruikersnaam</div>
+                <div id="emailHelp" class="form-text">Voer hier uw voornaam in</div>
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Wachtwoord</label>
