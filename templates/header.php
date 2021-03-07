@@ -33,11 +33,13 @@ session_start()
                         <a class="nav-link" href="login.php">Login</a>
                     </li>
                 </ul>
+                <form>
+                    <input type="search" placeholder="Zoeken">
+                    <button class="btn btn-outline-success" type="submit">Zoeken</button>
+                </form>
                 <span class="navbar-text">Welkom <?php echo $_SESSION['voornaam']; ?></span>
             </div>
         </div>
-    </nav>
-    </div>
     </nav>
 </body>
 
