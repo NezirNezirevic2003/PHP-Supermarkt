@@ -19,7 +19,7 @@ require_once 'templates/footer.php';
             <div class="card-body">
                 <h5 class="card-title">Klantgegevens wijzigen, toevoegen of verwijderen</h5>
                 <p class="card-text"></p>
-                <a href="createKlant.php" class="btn btn-success">Klantgegevens</a>
+                <a href="klantgegevens.php" class="btn btn-success">Klantgegevens</a>
             </div>
         </div>
         <div class="col-sm">

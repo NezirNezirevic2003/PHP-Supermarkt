@@ -4,9 +4,19 @@ include_once 'dbh.class.php';
 
 class User extends Dbh
 {
+    public function getKlanten()
+    {
+        $sql = "SELECT * FROM klantgegevens";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+
+        while ($result = $stmt->fetchAll()) {
+            return $result;
+        }
+    }
     public function createUser($voornaam, $achternaam, $email, $wachtwoord, $adres, $plaats, $zip)
     {
-        $sql = "INSERT INTO register(voornaam, achternaam, email, wachtwoord, adres, plaats, zip) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO klantgegevens(voornaam, achternaam, email, wachtwoord, adres, plaats, zip) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$voornaam, $achternaam, $email, $wachtwoord, $adres, $plaats, $zip]);
         header('location: login.php');
@@ -25,7 +35,7 @@ class User extends Dbh
     public function loginUser($voornaam, $wachtwoord)
     {
         $wachtwoord = $_POST['wachtwoord'];
-        $sql = "SELECT * FROM register WHERE voornaam = ? AND wachtwoord = ? ";
+        $sql = "SELECT * FROM klantgegevens WHERE voornaam = ? AND wachtwoord = ? ";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$voornaam, $wachtwoord]);
 
