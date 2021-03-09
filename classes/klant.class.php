@@ -39,6 +39,14 @@ class Klant extends Dbh
         header('location: klantgegevens.php');
     }
 
+    public function deleteKlant($klantid)
+    {
+        $sql = "DELETE FROM klantgegevens WHERE klantid = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$klantid]);
+        header('location: klantgegevens.php');
+    }
+
     public function emptyInputLogin($email, $wachtwoord)
     {
         if (empty($email) || empty($wachtwoord)) {

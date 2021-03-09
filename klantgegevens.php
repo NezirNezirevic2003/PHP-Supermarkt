@@ -61,8 +61,9 @@ include "./templates/footer.php";
                                     class="fas fa-pen"></i>Update</a>
                         </td>
                         <td>
-                            <a href="index.php" class="btn btn-danger" role="button" aria-pressed="true"><i
-                                    style="margin-right: 4px" class="fas fa-trash"></i>Delete</a>
+                            <a href="klant.process.php?klantid=<?php echo $klant['klantid']; ?>&send=del"
+                                class="btn btn-danger" role="button" aria-pressed="true"><i style="margin-right: 4px"
+                                    class="fas fa-trash"></i>Delete</a>
                         </td>
                     </tr>
                     <?php

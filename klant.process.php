@@ -13,4 +13,7 @@ if (isset($_POST['update'])) {
     $zip = $_POST['zip'];
 
     $klant->updateKlant($voornaam, $achternaam, $email, $wachtwoord, $adres, $plaats, $zip, $klantid);
+} else if ($_GET['send'] === 'del') {
+    $klantid = $_GET['klantid'];
+    $klant->deleteKlant($klantid);
 }
