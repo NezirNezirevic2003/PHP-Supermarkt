@@ -13,12 +13,11 @@
     require_once "./templates/header.php";
     require_once "./templates/footer.php";
     require_once "./classes/dbh.class.php";
-    require_once "./classes/user.class.php";
+    require_once "./classes/klant.class.php";
 
     if (isset($_POST['submit'])) {
-
-        $user = new User();
-
+        $user = new Klant();
+        $klantid = $_POST['klantid'];
         $voornaam = $_POST['voornaam'];
         $achternaam = $_POST['achternaam'];
         $email = $_POST['email'];
@@ -27,40 +26,44 @@
         $plaats = $_POST['plaats'];
         $zip = $_POST['zip'];
 
-        $user->createUser($voornaam, $achternaam, $email, $wachtwoord, $adres, $plaats, $zip);
+        $user->createKlant($voornaam, $achternaam, $email, $wachtwoord, $adres, $plaats, $zip);
     }
     ?>
     <div class="container">
         <form class="row g-3 mt-5" action="<?php echo $_SERVER['PHP_SELF']  ?>" method="POST">
             <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">Voornaam</label>
-                <input type="text" name="voornaam" class="form-control" id="inputEmail4">
+                <input type="text" name="voornaam" class="form-control" id="voornaam"
+                    value="<?php echo $_POST['voornaam'] ?? '' ?>">
             </div>
             <div class="col-md-6">
                 <label for="inputPassword4" class="form-label">Achternaam</label>
-                <input type="text" name="achternaam" class="form-control" id="inputPassword4">
+                <input type="text" name="achternaam" class="form-control" id="achternaam"
+                    value="<?php echo $_POST['achternaam'] ?? '' ?>">
             </div>
             <div class="col-12">
                 <label for="inputAddress" class="form-label">E-mail</label>
-                <input type="email" name="email" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                <input type="email" name="email" class="form-control" id="email"
+                    value="<?php echo $_POST['email'] ?? '' ?>">
             </div>
             <div class="col-12">
                 <label for="inputAddress" class="form-label">Wachtwoord</label>
-                <input type="password" name="wachtwoord" class="form-control" id="inputAddress"
-                    placeholder="1234 Main St">
+                <input type="password" name="wachtwoord" class="form-control" id="wachtwoord"
+                    value="<?php echo $_POST['wachtwoord'] ?? '' ?>">
             </div>
             <div class="col-12">
                 <label for="inputAddress2" class="form-label">Adres</label>
-                <input type="text" name="adres" class="form-control" id="inputAddress2"
-                    placeholder="Apartment, studio, or floor">
+                <input type="text" name="adres" class="form-control" id="adres"
+                    value="<?php echo $_POST['adres'] ?? '' ?>">
             </div>
             <div class="col-md-6">
                 <label for="inputCity" class="form-label">Plaats</label>
-                <input type="text" name="plaats" class="form-control" id="inputCity">
+                <input type="text" name="plaats" class="form-control" id="plaats"
+                    value="<?php echo $_POST['plaats'] ?? '' ?>">
             </div>
             <div class="col-md-6">
                 <label for="inputZip" class="form-label">Zip</label>
-                <input type="text" name="zip" class="form-control" id="inputZip">
+                <input type="text" name="zip" class="form-control" id="zip" value="<?php echo $_POST['zip'] ?? '' ?>">
             </div>
             <div class="col-12">
                 <button type="submit" name="submit" class="btn btn-primary">Registreren</button>

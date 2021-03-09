@@ -30,6 +30,7 @@ include "./templates/footer.php";
             <table class="table table-striped table-dark">
                 <thead class="thead-dark">
                     <tr>
+                        <th>Klantid</th>
                         <th>Voornaam</th>
                         <th>Achternaam</th>
                         <th>Email</th>
@@ -43,19 +44,21 @@ include "./templates/footer.php";
                 </thead>
                 <tbody id="tbody">
                     <?php
-                    $klanten = new User();
+                    $klanten = new Klant();
                     foreach ($klanten->getKlanten() as $klant) { ?>
                     <tr>
+                        <td><?php echo $klant['klantid']; ?></td>
                         <td><?php echo $klant['voornaam']; ?></td>
                         <td><?php echo $klant['achternaam']; ?></td>
-                        <td> <?php echo $klant['email']; ?></td>
+                        <td><?php echo $klant['email']; ?></td>
                         <td><?php echo $klant['wachtwoord']; ?></td>
                         <td><?php echo $klant['adres']; ?></td>
                         <td><?php echo $klant['plaats']; ?></td>
                         <td><?php echo $klant['zip']; ?></td>
                         <td>
-                            <a href="index.php" class="btn btn-success" role="button" aria-pressed="true"><i
-                                    style="margin-right: 4px" class="fas fa-pen"></i>Update</a>
+                            <a href="editKlantgegevens.php?klantid=<?php echo $klant['klantid']; ?>"
+                                class="btn btn-success" role="button"><i style="margin-right: 4px"
+                                    class="fas fa-pen"></i>Update</a>
                         </td>
                         <td>
                             <a href="index.php" class="btn btn-danger" role="button" aria-pressed="true"><i

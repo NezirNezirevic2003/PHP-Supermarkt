@@ -12,17 +12,17 @@ session_set_cookie_params(3600);
     <title>Document</title>
 </head>
 <?php
-require_once 'classes/user.class.php';
+require_once 'classes/klant.class.php';
 require_once 'classes/dbh.class.php';
 include "./templates/header.php";
 include "./templates/footer.php";
 
 if (isset($_POST['submit'])) {
 
-    $user = new User();
+    $user = new Klant();
     $voornaam = $_POST['voornaam'];
     $wachtwoord = $_POST['wachtwoord'];
-    $user->loginUser($voornaam, $wachtwoord);
+    $user->loginKlant($voornaam, $wachtwoord);
     $_SESSION['voornaam'] = $voornaam;
     echo $email;
 }

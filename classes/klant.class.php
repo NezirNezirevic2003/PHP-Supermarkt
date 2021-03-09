@@ -2,7 +2,7 @@
 
 include_once 'dbh.class.php';
 
-class User extends Dbh
+class Klant extends Dbh
 {
     public function getKlanten()
     {
@@ -14,12 +14,21 @@ class User extends Dbh
             return $result;
         }
     }
-    public function createUser($voornaam, $achternaam, $email, $wachtwoord, $adres, $plaats, $zip)
+    public function createKlant($voornaam, $achternaam, $email, $wachtwoord, $adres, $plaats, $zip)
     {
         $sql = "INSERT INTO klantgegevens(voornaam, achternaam, email, wachtwoord, adres, plaats, zip) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$voornaam, $achternaam, $email, $wachtwoord, $adres, $plaats, $zip]);
         header('location: login.php');
+    }
+
+    public function editKlant($klantid)
+    {
+        $sql = "SELECT * FROM klantgegevens WHERE klantid = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$klantid]);
+        $result = $stmt->fetch();
+        return $result;
     }
 
     public function emptyInputLogin($email, $wachtwoord)
@@ -32,7 +41,7 @@ class User extends Dbh
         return $result;
     }
 
-    public function loginUser($voornaam, $wachtwoord)
+    public function loginKlant($voornaam, $wachtwoord)
     {
         $wachtwoord = $_POST['wachtwoord'];
         $sql = "SELECT * FROM klantgegevens WHERE voornaam = ? AND wachtwoord = ? ";
