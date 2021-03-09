@@ -31,6 +31,14 @@ class Klant extends Dbh
         return $result;
     }
 
+    public function updateKlant($voornaam, $achternaam, $email, $wachtwoord, $adres, $plaats, $zip, $klantid)
+    {
+        $sql = "UPDATE klantgegevens SET voornaam = ?, achternaam = ?, email = ?, wachtwoord = ?, adres = ?, plaats = ?, zip = ? WHERE klantid = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$voornaam, $achternaam, $email, $wachtwoord, $adres, $plaats, $zip, $klantid]);
+        header('location: klantgegevens.php');
+    }
+
     public function emptyInputLogin($email, $wachtwoord)
     {
         if (empty($email) || empty($wachtwoord)) {

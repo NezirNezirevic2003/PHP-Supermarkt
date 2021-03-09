@@ -17,7 +17,7 @@ $zip = $klant['zip'];
 ?>
 
 <div class="container">
-    <form class="row g-3 mt-5" method="POST">
+    <form class="row g-3 mt-5" action="klant.process.php?klantid=<?= $klantid; ?>" method="POST">
         <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Nieuwe Voornaam</label>
             <input type="text" name="voornaam" class="form-control" id="voornaam" value="<?= $voornaam; ?>">
@@ -47,7 +47,7 @@ $zip = $klant['zip'];
             <input type="text" name="zip" class="form-control" id="zip" value="<?= $zip; ?>">
         </div>
         <div class="col-12">
-            <button type="submit" name="submit" class="btn btn-success">Wijzigen</button>
+            <button type="submit" name="update" class="btn btn-success">Wijzigen</button>
         </div>
     </form>
 </div>
