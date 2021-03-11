@@ -4,6 +4,14 @@ include_once 'dbh.class.php';
 
 class Klant extends Dbh
 {
+    public function createKlant($voornaam, $achternaam, $email, $wachtwoord, $adres, $plaats, $zip)
+    {
+        $sql = "INSERT INTO klantgegevens(voornaam, achternaam, email, wachtwoord, adres, plaats, zip) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$voornaam, $achternaam, $email, $wachtwoord, $adres, $plaats, $zip]);
+        header('location: login.php');
+    }
+
     public function getKlanten()
     {
         $sql = "SELECT * FROM klantgegevens";
@@ -13,13 +21,6 @@ class Klant extends Dbh
         while ($result = $stmt->fetchAll()) {
             return $result;
         }
-    }
-    public function createKlant($voornaam, $achternaam, $email, $wachtwoord, $adres, $plaats, $zip)
-    {
-        $sql = "INSERT INTO klantgegevens(voornaam, achternaam, email, wachtwoord, adres, plaats, zip) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$voornaam, $achternaam, $email, $wachtwoord, $adres, $plaats, $zip]);
-        header('location: login.php');
     }
 
     public function editKlant($klantid)

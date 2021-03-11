@@ -26,14 +26,14 @@ require_once 'templates/footer.php';
             <div class="card-body">
                 <h5 class="card-title">Producten wijzigen, toevoegen of verwijderen</h5>
                 <p class="card-text"></p>
-                <a href="readKlant.php" class="btn btn-primary">Producten</a>
+                <a href="productgegevens.php" class="btn btn-primary">Producten</a>
             </div>
         </div>
         <div class="col-sm">
             <div class="card-body">
                 <h5 class="card-title">Medewerkers wijzigen, toevoegen of verwijderen</h5>
                 <p class="card-text"></p>
-                <a href="readKlant.php" class="btn btn-secondary">Medewerkers</a>
+                <a href="medewerkers.php" class="btn btn-secondary">Medewerkers</a>
             </div>
         </div>
         <div class="col-sm">
