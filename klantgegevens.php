@@ -1,7 +1,6 @@
 <?php
 include "./includes/autoload.inc.php";
 include "./templates/header.php";
-include "./templates/footer.php";
 ?>
 
 <!DOCTYPE html>
@@ -57,7 +56,7 @@ include "./templates/footer.php";
                         <td><?php echo $klant['zip']; ?></td>
                         <td>
                             <a href="editKlantgegevens.php?klantid=<?php echo $klant['klantid']; ?>"
-                                class="btn btn-success" role="button"><i style="margin-right: 4px"
+                                class="btn btn-primary" role="button"><i style="margin-right: 4px"
                                     class="fas fa-pen"></i>Update</a>
                         </td>
                         <td>

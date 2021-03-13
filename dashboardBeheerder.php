@@ -1,6 +1,5 @@
 <?php
 require_once 'templates/header.php';
-require_once 'templates/footer.php';
 ?>
 <div class="container">
     <div style="margin-top: 50px" class="jumbotron">

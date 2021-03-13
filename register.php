@@ -11,7 +11,6 @@
 <body>
     <?php
     require_once "./templates/header.php";
-    require_once "./templates/footer.php";
     require_once "./classes/dbh.class.php";
     require_once "./classes/klant.class.php";
 

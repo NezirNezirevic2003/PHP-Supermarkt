@@ -11,7 +11,6 @@
 require_once 'classes/beheerder.class.php';
 require_once 'classes/dbh.class.php';
 include "./templates/header.php";
-include "./templates/footer.php";
 
 if (isset($_POST['submit'])) {
 
@@ -23,7 +22,7 @@ if (isset($_POST['submit'])) {
 ?>
 
 <body>
-    <div class="container-sm">
+    <div class="container">
         <form class="mt-5" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Gebruikersnaam</label>

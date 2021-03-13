@@ -1,7 +1,6 @@
 <?php
 include "./includes/autoload.inc.php";
 include "./templates/header.php";
-include "./templates/footer.php";
 
 if (isset($_POST['submit'])) {
     $medewerker = new Beheerder;
@@ -30,23 +29,19 @@ if (isset($_POST['submit'])) {
         <form class="row g-3 mt-5" action="<?php echo $_SERVER['PHP_SELF']  ?>" method="POST">
             <div class="col-12">
                 <label for="inputAddress" class="form-label">Voornaam</label>
-                <input type="text" name="voornaam" class="form-control" id="voornaam"
-                    value="<?php echo $_POST['voornaam'] ?? '' ?>">
+                <input type="text" name="voornaam" class="form-control" id="voornaam" value="<?php echo $_POST['voornaam'] ?? '' ?>">
             </div>
             <div class="col-12">
                 <label for="inputAddress" class="form-label">Achternaam</label>
-                <input type="text" name="achternaam" class="form-control" id="achternaam"
-                    value="<?php echo $_POST['achternaam'] ?? '' ?>">
+                <input type="text" name="achternaam" class="form-control" id="achternaam" value="<?php echo $_POST['achternaam'] ?? '' ?>">
             </div>
             <div class="col-12">
                 <label for="inputAddress" class="form-label">Functie</label>
-                <input type="text" name="functie" class="form-control" id="functie"
-                    value="<?php echo $_POST['functie'] ?? '' ?>">
+                <input type="text" name="functie" class="form-control" id="functie" value="<?php echo $_POST['functie'] ?? '' ?>">
             </div>
             <div class="col-12">
                 <label for="inputAddress" class="form-label">Salaris</label>
-                <input type="text" name="salaris" class="form-control" id="salaris"
-                    value="<?php echo $_POST['salaris'] ?? '' ?>">
+                <input type="text" name="salaris" class="form-control" id="salaris" value="<?php echo $_POST['salaris'] ?? '' ?>">
             </div>
             <div class="col-12">
                 <button type="submit" name="submit" class="btn btn-primary">Toevoegen</button>

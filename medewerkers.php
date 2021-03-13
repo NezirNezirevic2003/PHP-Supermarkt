@@ -1,7 +1,6 @@
 <?php
 include "./includes/autoload.inc.php";
 include "./templates/header.php";
-include "./templates/footer.php";
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +54,7 @@ include "./templates/footer.php";
                         <td><?php echo $medewerker['salaris']; ?></td>
                         <td>
                             <a href="editMedewerkers.php?medewerkerid=<?php echo $medewerker['medewerkerid']; ?>"
-                                class="btn btn-success" role="button"><i style="margin-right: 4px"
+                                class="btn btn-primary" role="button"><i style="margin-right: 4px"
                                     class="fas fa-pen"></i>Update</a>
                         </td>
                         <td>
