@@ -10,30 +10,28 @@
 
 <body>
     <?php
-    include_once './classes/dbh.class.php';
     include "./includes/autoload.inc.php";
     include "./templates/header.php";
+
+    $dbh = new PDO("mysql:host=localhost;dbname=supermarkt", "root", "");
+    if (isset($_POST['submit'])) {
+        $name = $_FILES['productafbeelding']['name'];
+        $type = $_FILES['productafbeelding']['type'];
+        $data = file_get_contents($_FILES['productafbeelding']['tmp_name']);
+        $stmt = $dbh->prepare("INSERT INTO product VALUES('',?,?,?)");
+        $stmt->bindParam(1, $name);
+        $stmt->bindParam(2, $type);
+        $stmt->bindParam(3, $data);
+        $stmt->execute();
+    }
     ?>
     <div class="container">
-        <form class="row g-3 mt-5" action="<?php echo $_SERVER['PHP_SELF']  ?>" method="POST">
-            <div class="col-12">
-                <label for="inputAddress" class="form-label">Productnaam</label>
-                <input type="text" name="productnaam" class="form-control" id="productnaam" value="<?php echo $_POST['productnaam'] ?? '' ?>">
+        <form class="row g-3 mt-5" enctype="multipart/form-data" method="POST">
+            <div class="mt-3">
+                <input type="file" name="productafbeelding" id="productafbeelding">
             </div>
-            <div class="custom-file">
-                <input type="file" name="productafbeelding" class="custom-file-input" id="productafbeelding" required value="<?php echo $_POST['productafbeelding'] ?? '' ?>">
-                <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-            </div>
-            <div class="col-12">
-                <label for="inputAddress" class="form-label">Productprijs</label>
-                <input type="text" name="productprijs" class="form-control" id="productprijs" value="<?php echo $_POST['productprijs'] ?? '' ?>">
-            </div>
-            <div class="col-12">
-                <label for="inputAddress" class="form-label">Productomschrijving</label>
-                <input type="text" name="productnaam" class="form-control" id="productnaam" value="<?php echo $_POST['productomschrijving'] ?? '' ?>">
-            </div>
-            <div class="col-12">
-                <button type="submit" name="submit" class="btn btn-primary">Toevoegen</button>
+            <div class="col-12 mt-3">
+                <button type="submit" name="submit" class="btn btn-success">Toevoegen</button>
             </div>
         </form>
     </div>
