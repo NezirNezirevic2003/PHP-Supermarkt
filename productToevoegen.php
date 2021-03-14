@@ -18,17 +18,30 @@
         $name = $_FILES['productafbeelding']['name'];
         $type = $_FILES['productafbeelding']['type'];
         $data = file_get_contents($_FILES['productafbeelding']['tmp_name']);
-        $stmt = $dbh->prepare("INSERT INTO product VALUES('',?,?,?)");
+        $productnaam = $_POST['productnaam'];
+        $productprijs = $_POST['productprijs'];
+        $stmt = $dbh->prepare("INSERT INTO product VALUES('',?,?,?,?,?)");
         $stmt->bindParam(1, $name);
         $stmt->bindParam(2, $type);
         $stmt->bindParam(3, $data);
+        $stmt->bindParam(4, $productnaam);
+        $stmt->bindParam(5, $productprijs);
         $stmt->execute();
     }
     ?>
     <div class="container">
         <form class="row g-3 mt-5" enctype="multipart/form-data" method="POST">
-            <div class="mt-3">
-                <input type="file" name="productafbeelding" id="productafbeelding">
+            <div class="form-group ml-3">
+                <label for="exampleFormControlFile1">Kies een foto</label>
+                <input type="file" name="productafbeelding" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+            <div class="col-12 mt-3">
+                <label for="inputAddress" class="form-label">Productnaam</label>
+                <input type="text" name="productnaam" class="form-control" id="productnaam">
+            </div>
+            <div class="col-12 mt-3">
+                <label for="inputAddress" class="form-label">Productprijs</label>
+                <input type="text" name="productprijs" class="form-control" id="productprijs">
             </div>
             <div class="col-12 mt-3">
                 <button type="submit" name="submit" class="btn btn-success">Toevoegen</button>
