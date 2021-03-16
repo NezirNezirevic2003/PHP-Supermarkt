@@ -4,6 +4,17 @@ include_once 'dbh.class.php';
 
 class Beheerder extends Dbh
 {
+    public function getProducten()
+    {
+        $sql = "SELECT * FROM product";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+
+        while ($result = $stmt->fetchAll()) {
+            return $result;
+        }
+    }
+
     public function createMedewerker($voornaam, $achternaam, $functie, $salaris)
     {
         $sql = "INSERT INTO medewerkers(voornaam, achternaam, functie, salaris) VALUES (?, ?, ?, ?)";
