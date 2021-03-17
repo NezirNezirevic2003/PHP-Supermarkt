@@ -39,7 +39,7 @@ require_once 'templates/header.php';
             <div class="card-body">
                 <h5 class="card-title">Categorien wijzigen, toevoegen of verwijderen</h5>
                 <p class="card-text"></p>
-                <a href="readKlant.php" class="btn btn-danger">Categorieen</a>
+                <a href="categoriegegevens.php" class="btn btn-danger">Categorieen</a>
             </div>
         </div>
     </div>

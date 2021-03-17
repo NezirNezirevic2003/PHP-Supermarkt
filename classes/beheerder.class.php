@@ -4,6 +4,15 @@ include_once 'dbh.class.php';
 
 class Beheerder extends Dbh
 {
+
+    public function createCategorie($categorienaam)
+    {
+        $sql = "INSERT INTO categorieen(categorienaam) VALUES (?)";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$categorienaam]);
+        header('location: categoriegegevens.php');
+    }
+
     public function getProducten()
     {
         $sql = "SELECT * FROM product";
