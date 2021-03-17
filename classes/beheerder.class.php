@@ -4,6 +4,16 @@ include_once 'dbh.class.php';
 
 class Beheerder extends Dbh
 {
+    public function getCategorieen()
+    {
+        $sql = "SELECT * FROM categorieen";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+
+        while ($result = $stmt->fetchAll()) {
+            return $result;
+        }
+    }
 
     public function createCategorie($categorienaam)
     {
