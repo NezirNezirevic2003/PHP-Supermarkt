@@ -1,5 +1,8 @@
 <?php
 include "./templates/header.php";
+include "./classes/dbh.class.php";
+include "./includes/autoload.inc.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +16,26 @@ include "./templates/header.php";
 </head>
 
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md ml-5">
+                <div class="card mt-4" style="width: 15rem;">
+                    <?php
+                    $producten = new Beheerder();
+                    foreach ($producten->getProducten() as $product) { ?>
+                    <?php echo "<embed src='data:" . $product['mime'] . ";base64," . base64_encode($product['data']) . "'width='200' height='100'"; ?>
+                    <-->
+                        <h5 class="card-title"><?php echo $product['productnaam']; ?></h5>
+                        <p class="card-text">Verse druiven voor een gezonde snack</p>
+                        <a href="#" class="btn btn-primary">€ <?php echo $product['productprijs']; ?></a>
+                        <?php
+                    }
+                        ?>
+                </div>
+            </div>
+
+
+
 </body>
 
 </html>
