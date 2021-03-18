@@ -16,7 +16,7 @@ include "./includes/autoload.inc.php";
 </head>
 
 <body>
-    <div class="container">
+    <div class="container mb-4">
         <div class="row">
             <div class="col-md">
                 <div class="card mt-4" style="width: 15rem;">
