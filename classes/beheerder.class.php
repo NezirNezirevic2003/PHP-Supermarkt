@@ -15,6 +15,15 @@ class Beheerder extends Dbh
         }
     }
 
+    public function editCategorie($categorieid)
+    {
+        $sql = "SELECT * FROM categorieen WHERE categorieid = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$categorieid]);
+        $result = $stmt->fetch();
+        return $result;
+    }
+
     public function createCategorie($categorienaam)
     {
         $sql = "INSERT INTO categorieen(categorienaam) VALUES (?)";
