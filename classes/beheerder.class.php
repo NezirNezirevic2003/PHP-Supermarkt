@@ -4,6 +4,14 @@ include_once 'dbh.class.php';
 
 class Beheerder extends Dbh
 {
+    public function deleteCategorie($categorieid)
+    {
+        $sql = "DELETE FROM categorieen WHERE categorieid = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$categorieid]);
+        header('location: categoriegegevens.php');
+    }
+
     public function getCategorieen()
     {
         $sql = "SELECT * FROM categorieen";
@@ -22,6 +30,14 @@ class Beheerder extends Dbh
         $stmt->execute([$categorieid]);
         $result = $stmt->fetch();
         return $result;
+    }
+
+    public function updateCategorie($categorienaam, $categorieid)
+    {
+        $sql = "UPDATE categorieen SET categorienaam = ? WHERE categorieid = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$categorienaam, $categorieid]);
+        header('location: categoriegegevens.php');
     }
 
     public function createCategorie($categorienaam)

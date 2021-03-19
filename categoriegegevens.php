@@ -47,12 +47,12 @@ include "./templates/header.php";
                         <td><?php echo $categorie['categorieid']; ?></td>
                         <td><?php echo $categorie['categorienaam']; ?></td>
                         <td>
-                            <a href="editKlantgegevens.php?categorieid=<?php echo $categorie['categorieid']; ?>"
+                            <a href="editCategoriegegevens.php?categorieid=<?php echo $categorie['categorieid']; ?>"
                                 class="btn btn-primary" role="button"><i style="margin-right: 4px"
                                     class="fas fa-pen"></i>Update</a>
                         </td>
                         <td>
-                            <a href="klant.process.php?categorieid=<?php echo $categorie['categoriid']; ?>&send=del"
+                            <a href="categorie.process.php?categorieid=<?php echo $categorie['categorieid']; ?>&send=del"
                                 class="btn btn-danger" role="button" aria-pressed="true"><i style="margin-right: 4px"
                                     class="fas fa-trash"></i>Delete</a>
                         </td>
