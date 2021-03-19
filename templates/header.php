@@ -41,10 +41,13 @@
                             Categorieen
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <?php
+                            $categorieen = new Beheerder();
+                            foreach ($categorieen->getCategorieen() as $categorie) { ?>
+                            <a class="dropdown-item" href="#"><?php echo $categorie['categorienaam']; ?></a>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </li>
                 </ul>
