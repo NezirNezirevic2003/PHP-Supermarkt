@@ -23,10 +23,10 @@ include "./includes/autoload.inc.php";
                     <?php
                     $producten = new Beheerder();
                     foreach ($producten->getProducten() as $product) { ?>
-                    <?php echo "<embed src='data:" . $product['mime'] . ";base64," . base64_encode($product['data']) . "'width='200' height='100'"; ?>
+                    <?php echo "<img class='card-img-top src='embed src='data:" . $product['mime'] . ";base64," . base64_encode($product['data']) . "'width='200' height='100'"; ?>
                     <-->
                         <h5 class="card-title"><?php echo $product['productnaam']; ?></h5>
-                        <p class="card-text">Verse druiven voor een gezonde snack</p>
+                        <p class="card-text"><?php echo $product['productomschrijving'] ?></p>
                         <a href="#" class="btn btn-primary">€ <?php echo $product['productprijs']; ?></a>
                         <?php
                     }
@@ -42,7 +42,7 @@ include "./includes/autoload.inc.php";
                     <?php echo "<embed src='data:" . $product['mime'] . ";base64," . base64_encode($product['data']) . "'width='200' height='100'"; ?>
                     <-->
                         <h5 class="card-title"><?php echo $product['productnaam']; ?></h5>
-                        <p class="card-text">Verse druiven voor een gezonde snack</p>
+                        <p class="card-text"><?php echo $product['productomschrijving'] ?></p>
                         <a href="#" class="btn btn-primary">€ <?php echo $product['productprijs']; ?></a>
                         <?php
                     }
@@ -56,9 +56,10 @@ include "./includes/autoload.inc.php";
                     $producten = new Beheerder();
                     foreach ($producten->getProducten() as $product) { ?>
                     <?php echo "<embed src='data:" . $product['mime'] . ";base64," . base64_encode($product['data']) . "'width='200' height='100'"; ?>
+
                     <-->
                         <h5 class="card-title"><?php echo $product['productnaam']; ?></h5>
-                        <p class="card-text">Verse druiven voor een gezonde snack</p>
+                        <p class="card-text"><?php echo $product['productomschrijving'] ?></p>
                         <a href="#" class="btn btn-primary">€ <?php echo $product['productprijs']; ?></a>
                         <?php
                     }

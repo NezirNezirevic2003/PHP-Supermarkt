@@ -19,13 +19,15 @@
         $type = $_FILES['productafbeelding']['type'];
         $data = file_get_contents($_FILES['productafbeelding']['tmp_name']);
         $productnaam = $_POST['productnaam'];
+        $productomschrijving = $_POST['productomschrijving'];
         $productprijs = $_POST['productprijs'];
-        $stmt = $dbh->prepare("INSERT INTO product VALUES('',?,?,?,?,?)");
+        $stmt = $dbh->prepare("INSERT INTO product VALUES('',?,?,?,?,?,?)");
         $stmt->bindParam(1, $name);
         $stmt->bindParam(2, $type);
         $stmt->bindParam(3, $data);
         $stmt->bindParam(4, $productnaam);
-        $stmt->bindParam(5, $productprijs);
+        $stmt->bindParam(5, $productomschrijving);
+        $stmt->bindParam(6, $productprijs);
         $stmt->execute();
     }
     ?>
@@ -38,6 +40,11 @@
             <div class="col-12 mt-3">
                 <label for="inputAddress" class="form-label">Productnaam</label>
                 <input type="text" name="productnaam" class="form-control" id="productnaam">
+            </div>
+            <div class="col-12 mt-3">
+                <label for="exampleFormControlTextarea1">Productomschrijving</label>
+                <textarea class="form-control" name="productomschrijving" id="exampleFormControlTextarea1" rows="3"
+                    width="50px"></textarea>
             </div>
             <div class="col-12 mt-3">
                 <label for="inputAddress" class="form-label">Productprijs</label>
