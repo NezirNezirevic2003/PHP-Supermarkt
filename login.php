@@ -1,7 +1,3 @@
-<?php
-ini_set('session.gc_maxlifetime', 3600);
-session_set_cookie_params(3600);
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,18 +8,17 @@ session_set_cookie_params(3600);
     <title>Document</title>
 </head>
 <?php
-require_once 'classes/klant.class.php';
-require_once 'classes/dbh.class.php';
+include "classes/beheerder.class.php";
+include_once "classes/dbh.class.php";
 include "./templates/header.php";
+include "./includes/autoload.inc.php";
 
 if (isset($_POST['submit'])) {
 
-    $user = new Klant();
+    $beheerder = new Beheerder();
     $voornaam = $_POST['voornaam'];
     $wachtwoord = $_POST['wachtwoord'];
-    $user->loginKlant($voornaam, $wachtwoord);
-    $_SESSION['voornaam'] = $voornaam;
-    echo $email;
+    $beheerder->loginKlant($voornaam, $wachtwoord);
 }
 ?>
 

@@ -11,9 +11,7 @@ include "./templates/header.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
-        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -43,28 +41,24 @@ include "./templates/header.php";
                 </thead>
                 <tbody id="tbody">
                     <?php
-                    $klanten = new Klant();
+                    $klanten = new Beheerder();
                     foreach ($klanten->getKlanten() as $klant) { ?>
-                    <tr>
-                        <td><?php echo $klant['klantid']; ?></td>
-                        <td><?php echo $klant['voornaam']; ?></td>
-                        <td><?php echo $klant['achternaam']; ?></td>
-                        <td><?php echo $klant['email']; ?></td>
-                        <td><?php echo $klant['wachtwoord']; ?></td>
-                        <td><?php echo $klant['adres']; ?></td>
-                        <td><?php echo $klant['plaats']; ?></td>
-                        <td><?php echo $klant['zip']; ?></td>
-                        <td>
-                            <a href="editKlantgegevens.php?klantid=<?php echo $klant['klantid']; ?>"
-                                class="btn btn-primary" role="button"><i style="margin-right: 4px"
-                                    class="fas fa-pen"></i>Update</a>
-                        </td>
-                        <td>
-                            <a href="klant.process.php?klantid=<?php echo $klant['klantid']; ?>&send=del"
-                                class="btn btn-danger" role="button" aria-pressed="true"><i style="margin-right: 4px"
-                                    class="fas fa-trash"></i>Delete</a>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td><?php echo $klant['klantid']; ?></td>
+                            <td><?php echo $klant['voornaam']; ?></td>
+                            <td><?php echo $klant['achternaam']; ?></td>
+                            <td><?php echo $klant['email']; ?></td>
+                            <td><?php echo $klant['wachtwoord']; ?></td>
+                            <td><?php echo $klant['adres']; ?></td>
+                            <td><?php echo $klant['plaats']; ?></td>
+                            <td><?php echo $klant['zip']; ?></td>
+                            <td>
+                                <a href="editKlantgegevens.php?klantid=<?php echo $klant['klantid']; ?>" class="btn btn-primary" role="button"><i style="margin-right: 4px" class="fas fa-pen"></i>Update</a>
+                            </td>
+                            <td>
+                                <a href="klant.process.php?klantid=<?php echo $klant['klantid']; ?>&send=del" class="btn btn-danger" role="button" aria-pressed="true"><i style="margin-right: 4px" class="fas fa-trash"></i>Delete</a>
+                            </td>
+                        </tr>
                     <?php
                     }
                     ?>

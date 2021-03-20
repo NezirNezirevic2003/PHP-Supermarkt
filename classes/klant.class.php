@@ -12,42 +12,6 @@ class Klant extends Dbh
         header('location: login.php');
     }
 
-    public function getKlanten()
-    {
-        $sql = "SELECT * FROM klantgegevens";
-        $stmt = $this->connect()->prepare($sql);
-        $stmt->execute();
-
-        while ($result = $stmt->fetchAll()) {
-            return $result;
-        }
-    }
-
-    public function editKlant($klantid)
-    {
-        $sql = "SELECT * FROM klantgegevens WHERE klantid = ?";
-        $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$klantid]);
-        $result = $stmt->fetch();
-        return $result;
-    }
-
-    public function updateKlant($voornaam, $achternaam, $email, $wachtwoord, $adres, $plaats, $zip, $klantid)
-    {
-        $sql = "UPDATE klantgegevens SET voornaam = ?, achternaam = ?, email = ?, wachtwoord = ?, adres = ?, plaats = ?, zip = ? WHERE klantid = ?";
-        $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$voornaam, $achternaam, $email, $wachtwoord, $adres, $plaats, $zip, $klantid]);
-        header('location: klantgegevens.php');
-    }
-
-    public function deleteKlant($klantid)
-    {
-        $sql = "DELETE FROM klantgegevens WHERE klantid = ?";
-        $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$klantid]);
-        header('location: klantgegevens.php');
-    }
-
     public function emptyInputLogin($email, $wachtwoord)
     {
         if (empty($email) || empty($wachtwoord)) {

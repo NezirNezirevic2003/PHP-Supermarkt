@@ -1,6 +1,6 @@
 <?php
 include './includes/autoload.inc.php';
-$klant = new Klant;
+$klant = new Beheerder;
 
 if (isset($_POST['update'])) {
     $klantid = $_GET['klantid'];

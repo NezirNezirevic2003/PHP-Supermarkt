@@ -2,7 +2,7 @@
 include './includes/autoload.inc.php';
 require_once './templates/header.php';
 
-$klanten = new Klant;
+$klanten = new Beheerder;
 $klant = $klanten->editKlant($_GET['klantid']);
 
 $klantid = $klant['klantid'];
