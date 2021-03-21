@@ -50,9 +50,12 @@
                             ?>
                         </div>
                     </li>
-                    <span class="navbar-text ml-5">Welkom <?php if (isset($_SESSION['voornaam'])) {
-                                                                echo $_SESSION['voornaam'];
-                                                            } ?></span>
+                    <span class="navbar-text" style="margin-left: 10px;">Welkom <?php if (isset($_SESSION['voornaam'])) {
+                                                                                    echo $_SESSION['voornaam'];
+                                                                                } ?></span>
+                    <li class="nav-item" style="margin-left: 30px;">
+                        <a class="nav-link" href="uitloggen.php">Uitloggen</a>
+                    </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Zoek uw product" aria-label="Search">
