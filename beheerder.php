@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <?php
+session_start();
 require_once 'classes/beheerder.class.php';
 require_once 'classes/dbh.class.php';
 include "./templates/header.php";
@@ -26,8 +27,7 @@ if (isset($_POST['submit'])) {
         <form class="mt-5" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Gebruikersnaam</label>
-                <input type="text" name="gebruikersnaam" class="form-control" id="exampleInputEmail1"
-                    aria-describedby="emailHelp">
+                <input type="text" name="gebruikersnaam" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text">Voer hier uw gebruikersnaam in</div>
             </div>
             <div class="mb-3">

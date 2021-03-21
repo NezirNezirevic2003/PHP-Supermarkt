@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include './includes/autoload.inc.php';
 require_once './templates/header.php';

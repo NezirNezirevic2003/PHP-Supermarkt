@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include "./includes/autoload.inc.php";
 include "./templates/header.php";
 ?>

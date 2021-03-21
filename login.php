@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +21,7 @@ if (isset($_POST['submit'])) {
     $beheerder = new Beheerder();
     $voornaam = $_POST['voornaam'];
     $wachtwoord = $_POST['wachtwoord'];
+    $_SESSION['voornaam'] = $voornaam;
     $beheerder->loginKlant($voornaam, $wachtwoord);
 }
 ?>

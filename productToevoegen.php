@@ -10,6 +10,8 @@
 
 <body>
     <?php
+    session_start();
+
     include "./includes/autoload.inc.php";
     include "./templates/header.php";
 
@@ -43,8 +45,7 @@
             </div>
             <div class="col-12 mt-3">
                 <label for="exampleFormControlTextarea1">Productomschrijving</label>
-                <textarea class="form-control" name="productomschrijving" id="exampleFormControlTextarea1" rows="3"
-                    width="50px"></textarea>
+                <textarea class="form-control" name="productomschrijving" id="exampleFormControlTextarea1" rows="3" width="50px"></textarea>
             </div>
             <div class="col-12 mt-3">
                 <label for="inputAddress" class="form-label">Productprijs</label>

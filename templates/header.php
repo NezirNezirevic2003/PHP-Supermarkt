@@ -50,6 +50,9 @@
                             ?>
                         </div>
                     </li>
+                    <span class="navbar-text ml-5">Welkom <?php if (isset($_SESSION['voornaam'])) {
+                                                                echo $_SESSION['voornaam'];
+                                                            } ?></span>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Zoek uw product" aria-label="Search">

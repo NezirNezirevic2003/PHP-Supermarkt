@@ -8,6 +8,8 @@
     <title>Document</title>
 </head>
 <?php
+session_start();
+
 include "classes/beheerder.class.php";
 include_once "classes/dbh.class.php";
 include "./templates/header.php";
