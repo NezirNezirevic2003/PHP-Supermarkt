@@ -67,7 +67,7 @@ if (isset($_POST['submit'])) {
                 <input type="text" name="zip" class="form-control" id="zip" value="<?php echo $_POST['zip'] ?? '' ?>">
             </div>
             <div class="col-12 mt-3">
-                <button type="submit" name="submit" class="btn btn-primary">Registreren</button>
+                <button type="submit" name="submit" class="btn btn-success">Registreren</button>
             </div>
         </form>
 </body>

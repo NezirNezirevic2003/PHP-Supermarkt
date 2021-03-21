@@ -1,6 +1,5 @@
 <?php
 include "./includes/autoload.inc.php";
-include "./classes/dbh.class.php";
 include "./templates/header.php";
 ?>
 
@@ -29,24 +28,54 @@ include "./templates/header.php";
         <a style="margin-top: 20px;" href="productToevoegen.php" class="btn btn-success" role="button"><i
                 style="margin-right: 4px" class="fas fa-plus-square"></i>Toevoegen</a>
     </div>
-    <div class="container mb-4">
-        <div class="row">
-            <div class="col-md">
-                <div class="card mt-4" style="width: 15rem;">
+    <div style="margin-top: 20px;" class="d-flex table-data">
+        <div class="container">
+            <table class="table table-striped table-dark">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Productafbeelding</th>
+                        <th>Artikelnr</th>
+                        <th>Productnaam</th>
+                        <th>Productomschrijving</th>
+                        <th>Productprijs</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
                     <?php
                     $producten = new Beheerder();
                     foreach ($producten->getProducten() as $product) { ?>
-                    <?php echo "<img class='card-img-top src='embed src='data:" . $product['mime'] . ";base64," . base64_encode($product['data']) . "'width='200' height='100'"; ?>
-                    <-->
-                        <h5 class="card-title"><?php echo $product['productnaam']; ?></h5>
-                        <p class="card-text"><?php echo $product['productomschrijving'] ?></p>
-                        <a href="#" class="btn btn-primary">€ <?php echo $product['productprijs']; ?></a>
-                        <?php
+                    <tr>
+                        <td><?php echo "<img class='card-img-top src='embed src='data:" . $product['mime'] . ";base64," . base64_encode($product['data']) . "'width='90' height='200'"; ?>
+                        </td>
+                        <td><?php echo $product['artikelnr']; ?></td>
+                        <td><?php echo $product['productnaam']; ?></td>
+                        <td><?php echo $product['productomschrijving']; ?></td>
+                        <td>€ <?php echo $product['productprijs']; ?></td>
+                        <td>
+                            <a href="editCategoriegegevens.php?categorieid=<?php echo $categorie['categorieid']; ?>"
+                                class="btn btn-primary" role="button"><i style="margin-right: 4px"
+                                    class="fas fa-pen"></i>Update</a>
+                        </td>
+                        <td>
+                            <a href="categorie.process.php?categorieid=<?php echo $categorie['categorieid']; ?>&send=del"
+                                class="btn btn-danger" role="button" aria-pressed="true"><i style="margin-right: 4px"
+                                    class="fas fa-trash"></i>Delete</a>
+                        </td>
+                    </tr>
+                    <?php
                     }
-                        ?>
+                    ?>
+                </tbody>
+            </table>
+        </div>
 
-                </div>
-            </div>
+    </div>
+
+    </div>
 </body>
 
 </html>
+
+<?php echo "<img class='card-img-top src='embed src='data:" . $product['mime'] . ";base64," . base64_encode($product['data']) . "'width='200' height='100'"; ?>

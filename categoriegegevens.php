@@ -28,7 +28,7 @@ include "./templates/header.php";
         <a style="margin-top: 20px;" href="categorieToevoegen.php" class="btn btn-success" role="button"><i
                 style="margin-right: 4px" class="fas fa-plus-square"></i>Toevoegen</a>
     </div>
-    <div style="margin-top: 50px;" class="d-flex table-data">
+    <div style="margin-top: 20px;" class="d-flex table-data">
         <div class="container">
             <table class="table table-striped table-dark">
                 <thead class="thead-dark">
