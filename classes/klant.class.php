@@ -33,7 +33,7 @@ class Klant extends Dbh
 
         if ($user['voornaam']) {
             if ($user['wachtwoord']) {
-                header('location: index.php');
+                header('location: dashboardKlant.php');
             }
         } else {
             header('location: login.php?error=verkeerdelogin');
