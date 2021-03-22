@@ -62,7 +62,7 @@ include "./templates/header.php";
                                     class="fas fa-pen"></i>Update</a>
                         </td>
                         <td>
-                            <a href="categorie.process.php?categorieid=<?php echo $categorie['categorieid']; ?>&send=del"
+                            <a href="product.process.php?artikelnr=<?php echo $product['artikelnr']; ?>&send=del"
                                 class="btn btn-danger" role="button" aria-pressed="true"><i style="margin-right: 4px"
                                     class="fas fa-trash"></i>Delete</a>
                         </td>
