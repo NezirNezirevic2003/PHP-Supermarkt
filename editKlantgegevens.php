@@ -2,6 +2,7 @@
 session_start();
 
 include './includes/autoload.inc.php';
+require_once "./includes/auth.check.beheerder.php";
 require_once './templates/header.php';
 
 $klanten = new Beheerder;

@@ -2,6 +2,7 @@
 session_start();
 
 include "./includes/autoload.inc.php";
+require_once "./includes/auth.check.beheerder.php";
 include "./classes/dbh.class.php";
 include "./templates/header.php";
 ?>

@@ -2,6 +2,7 @@
 session_start();
 
 include "./includes/autoload.inc.php";
+require_once "./includes/auth.check.beheerder.php";
 include "./templates/header.php";
 
 $categorieen = new Beheerder;
@@ -27,7 +28,8 @@ $categorienaam = $categorie['categorienaam'];
         <form class="row g-3 mt-5" action="categorie.process.php?categorieid=<?= $categorieid; ?>" method="POST">
             <div class="col-12 mt-3">
                 <label for="inputAddress" class="form-label">Categorienaam</label>
-                <input type="text" name="categorienaam" class="form-control" id="categorienaam" value="<?= $categorienaam; ?>">
+                <input type="text" name="categorienaam" class="form-control" id="categorienaam"
+                    value="<?= $categorienaam; ?>">
             </div>
             <div class="col-12 mt-3">
                 <button type="submit" name="update" class="btn btn-success">Wijzigen</button>

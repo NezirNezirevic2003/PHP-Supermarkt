@@ -18,6 +18,7 @@ if (isset($_POST['submit'])) {
     $beheerder = new Beheerder();
     $gebruikersnaam = $_POST['gebruikersnaam'];
     $wachtwoord = $_POST['wachtwoord'];
+    $_SESSION['gebruikersnaam'] = $gebruikersnaam;
     $beheerder->loginBeheerder($gebruikersnaam, $wachtwoord);
 }
 ?>

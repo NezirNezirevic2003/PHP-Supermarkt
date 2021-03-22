@@ -2,6 +2,7 @@
 session_start();
 
 include "./includes/autoload.inc.php";
+require_once "./includes/auth.check.beheerder.php";
 include "./templates/header.php";
 
 if (isset($_POST['submit'])) {
@@ -27,7 +28,8 @@ if (isset($_POST['submit'])) {
         <form class="row g-3 mt-5" action="<?php echo $_SERVER['PHP_SELF']  ?>" method="POST">
             <div class="col-12 mt-3">
                 <label for="inputAddress" class="form-label">Categorienaam</label>
-                <input type="text" name="categorienaam" class="form-control" id="categorienaam" value="<?php echo $_POST['categorienaam'] ?? '' ?>">
+                <input type="text" name="categorienaam" class="form-control" id="categorienaam"
+                    value="<?php echo $_POST['categorienaam'] ?? '' ?>">
             </div>
             <div class="col-12 mt-3">
                 <button type="submit" name="submit" class="btn btn-success">Toevoegen</button>

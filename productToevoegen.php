@@ -13,6 +13,7 @@
     session_start();
 
     include "./includes/autoload.inc.php";
+    require_once "./includes/auth.check.beheerder.php";
     include "./templates/header.php";
 
     $dbh = new PDO("mysql:host=localhost;dbname=supermarkt", "root", "");
@@ -45,7 +46,8 @@
             </div>
             <div class="col-12 mt-3">
                 <label for="exampleFormControlTextarea1">Productomschrijving</label>
-                <textarea class="form-control" name="productomschrijving" id="exampleFormControlTextarea1" rows="3" width="50px"></textarea>
+                <textarea class="form-control" name="productomschrijving" id="exampleFormControlTextarea1" rows="3"
+                    width="50px"></textarea>
             </div>
             <div class="col-12 mt-3">
                 <label for="inputAddress" class="form-label">Productprijs</label>
