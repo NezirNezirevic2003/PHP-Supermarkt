@@ -57,7 +57,7 @@ include "./templates/header.php";
                         <td><?php echo $product['productomschrijving']; ?></td>
                         <td>€ <?php echo $product['productprijs']; ?></td>
                         <td>
-                            <a href="editCategoriegegevens.php?categorieid=<?php echo $categorie['categorieid']; ?>"
+                            <a href="editProductgegevens.php?artikelnr=<?php echo $product['artikelnr']; ?>"
                                 class="btn btn-primary" role="button"><i style="margin-right: 4px"
                                     class="fas fa-pen"></i>Update</a>
                         </td>

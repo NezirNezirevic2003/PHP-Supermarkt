@@ -67,6 +67,15 @@ class Beheerder extends Dbh
         header('location: productgegevens.php');
     }
 
+    public function editProduct($artikelnr)
+    {
+        $sql = "SELECT * FROM product WHERE artikelnr = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$artikelnr]);
+        $result = $stmt->fetch();
+        return $result;
+    }
+
     public function createMedewerker($voornaam, $achternaam, $functie, $salaris)
     {
         $sql = "INSERT INTO medewerkers(voornaam, achternaam, functie, salaris) VALUES (?, ?, ?, ?)";

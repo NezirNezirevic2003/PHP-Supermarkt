@@ -29,6 +29,8 @@ include "./templates/header.php";
             <p>U kunt hier uw bestellingen bekijken of uw wachtwoord wijzigen</p>
             <p class="lead">
             </p>
+            <a style="margin-top: 20px;" href="categorieToevoegen.php" class="btn btn-primary" role="button"><i
+                    style="margin-right: 4px" class="fas fa-pen"></i>Wachtwoord wijzigen</a>
         </div>
     </div>
 
