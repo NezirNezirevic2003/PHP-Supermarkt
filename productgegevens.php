@@ -80,5 +80,3 @@ include "./templates/header.php";
 </body>
 
 </html>
-
-<?php echo "<img class='card-img-top src='embed src='data:" . $product['mime'] . ";base64," . base64_encode($product['data']) . "'width='200' height='100'"; ?>

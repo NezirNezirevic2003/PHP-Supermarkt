@@ -48,6 +48,18 @@ class Beheerder extends Dbh
         header('location: categoriegegevens.php');
     }
 
+    public function zoekProduct($productnaam)
+    {
+        $sql = "SELECT * FROM product WHERE productnaam = :productnaam";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute(["productnaam" => $productnaam]);
+
+        while ($result = $stmt->fetchAll()) {
+            return $result;
+        }
+    }
+
+
     public function getProducten()
     {
         $sql = "SELECT * FROM product";
