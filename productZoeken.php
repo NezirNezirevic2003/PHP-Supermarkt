@@ -25,7 +25,8 @@ if (isset($_POST['submit'])) {
         <form class="row g-3 mt-5" action="productZoeken.php" method="POST">
             <div class="col-12 mt-3">
                 <label for="inputAddress" class="form-label">Typ uw productnaam</label>
-                <input type="text" name="productzoekvak" class="form-control" id="productzoekvak" placeholder="zoeken">
+                <input type="text" name="productzoekvak" class="form-control" id="productzoekvak"
+                    placeholder="Zoeken..">
             </div>
             <div class="col-12 mt-3">
                 <button type="submit" name="submit" class="btn btn-success">Zoeken</button>
@@ -42,6 +43,13 @@ if (isset($_POST['submit'])) {
 
                         $producten = new Beheerder();
                         foreach ($producten->zoekProduct($productnaam) as $product) { ?>
+                    <div class="container">
+                        <div style="margin-top: 20px">
+                            <h3>Zoekresultaten</h3>
+                            <hr class="my-4">
+                            </p>
+                        </div>
+                    </div>
                     <?php echo "<img class='card-img-top src='embed src='data:" . $product['mime'] . ";base64," . base64_encode($product['data']) . "'width='200' height='100'"; ?>
                     <-->
                         <h5 class="card-title"><?php echo $product['productnaam']; ?></h5>
