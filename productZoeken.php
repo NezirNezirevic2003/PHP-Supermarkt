@@ -27,13 +27,19 @@ include "./templates/header.php";
             </div>
         </form>
     </div>
-
     <?php
     if (isset($_POST['submit'])) {
         $productnaam = $_POST['productzoekvak'];
 
         $producten = new Beheerder();
         foreach ($producten->zoekProduct($productnaam) as $product) { ?>
+    <div class="container">
+        <div style="margin-top: 20px">
+            <h3>Zoekresultaten</h3>
+            <hr class="my-4">
+            </p>
+        </div>
+    </div>
     <div class="container">
         <div class="card mt-4" style="width: 22rem;">
             <div class="card-body">
@@ -44,13 +50,10 @@ include "./templates/header.php";
             </div>
         </div>
     </div>
-
-
     <?php
         }
     }
     ?>
-
     </div>
 </body>
 

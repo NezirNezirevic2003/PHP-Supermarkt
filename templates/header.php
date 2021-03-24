@@ -53,10 +53,10 @@
                             ?>
                         </div>
                     </li>
-                    <span class="navbar-text" style="margin-left: 10px;">Welkom <?php if (isset($_SESSION['voornaam'])) {
-                                                                                    echo $_SESSION['voornaam'];
-                                                                                } ?></span>
-                    <li class="nav-item" style="margin-left: 30px;">
+                    <span class="navbar-text">Welkom <?php if (isset($_SESSION['voornaam'])) {
+                                                            echo $_SESSION['voornaam'];
+                                                        } ?></span>
+                    <li class="nav-item">
                         <a class="nav-link" href="uitloggen.php">Uitloggen</a>
                     </li>
                 </ul>
