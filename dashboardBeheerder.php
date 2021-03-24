@@ -37,28 +37,28 @@ include "./templates/header.php";
             <div class="col-sm">
                 <div class="card-body">
                     <h5 class="card-title">Klantgegevens wijzigen, toevoegen of verwijderen</h5>
-                    <p class="card-text"></p>
+                    <p class="card-text">Hier kunt u klantgegevens beheren</p>
                     <a href="klantgegevens.php" class="btn btn-success">Klantgegevens</a>
                 </div>
             </div>
             <div class="col-sm">
                 <div class="card-body">
-                    <h5 class="card-title">Producten wijzigen, toevoegen of verwijderen</h5>
-                    <p class="card-text"></p>
+                    <h5 class="card-title">Producten wijzigen,toevoegen of verwijderen</h5>
+                    <p class="card-text">Hier kunt u producten beheren</p>
                     <a href="productgegevens.php" class="btn btn-primary">Producten</a>
                 </div>
             </div>
             <div class="col-sm">
                 <div class="card-body">
                     <h5 class="card-title">Medewerkers wijzigen, toevoegen of verwijderen</h5>
-                    <p class="card-text"></p>
+                    <p class="card-text">Hier kunt u medewerkers beheren</p>
                     <a href="medewerkers.php" class="btn btn-secondary">Medewerkers</a>
                 </div>
             </div>
             <div class="col-sm">
                 <div class="card-body">
                     <h5 class="card-title">Categorien wijzigen, toevoegen of verwijderen</h5>
-                    <p class="card-text"></p>
+                    <p class="card-text">Hier kunt u categorieen beheren</p>
                     <a href="categoriegegevens.php" class="btn btn-danger">Categorieen</a>
                 </div>
             </div>
