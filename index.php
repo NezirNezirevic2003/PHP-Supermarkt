@@ -26,22 +26,26 @@ include "./templates/header.php";
             </p>
         </div>
     </div>
-    <div class="container mb-4">
-        <div class="row">
-            <div class="col-md">
-                <?php
-                $producten = new Beheerder();
-                foreach ($producten->getProducten() as $product) { ?>
-                <?php echo "<img class='card-img-top src='embed src='data:" . $product['mime'] . ";base64," . base64_encode($product['data']) . "'width='200' height='520'"; ?>
-                <-->
-                    <h5 class="card-title"><?php echo $product['productnaam']; ?></h5>
-                    <p class="card-text"><?php echo $product['productomschrijving'] ?></p>
-                    <a href="#" class="btn btn-primary">€ <?php echo $product['productprijs']; ?></a>
-                    <?php
-                }
-                    ?>
 
+    <?php
+    $producten = new Beheerder();
+    foreach ($producten->getProducten() as $product) { ?>
+    <div class="container">
+        <div class="card mb-3">
+            <img class="card-img-top"
+                <?php echo "<img class='card-img-top src='embed src='data:" . $product['mime'] . ";base64," . base64_encode($product['data']) . "'width='200' height='520'"; ?>
+                alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title"><?php echo $product['productnaam']; ?></h5>
+                <p class="card-text"><?php echo $product['productomschrijving']; ?></p>
+                <a href="#" class="btn btn-primary">€ <?php echo $product['productprijs']; ?></a>
             </div>
+        </div>
+    </div>
+    <?php
+    }
+    ?>
+
 </body>
 
 </html>
