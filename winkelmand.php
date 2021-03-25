@@ -26,6 +26,44 @@ include "./templates/header.php";
             </p>
         </div>
     </div>
+    <div class="container">
+        <div class="col-lg-8">
+            <table class="table table-hover">
+                <thead class="text-center">
+                    <tr>
+                        <th scope="col">Productnr</th>
+                        <th scope="col">Productnaam</th>
+                        <th scope="col">Productomschrijving</th>
+                        <th scope="col">Productprijs</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <?php
+                    if (isset($_SESSION['product'])) {
+                        foreach ($_SESSION['product'] as $key => $value) {
+                            print_r($value);
+                            echo
+                            "<tr>;
+                    <td></td>
+                    <td>$value[productnaam]</td>
+                    <td>$value[productomschrijving]</td>
+                    <td>$value[productprijs]</td>
+                    </tr>";
+                        }
+                    }
+                    ?>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
 </body>
 
 </html>
