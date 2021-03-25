@@ -51,13 +51,15 @@
                             ?>
                         </div>
                     </li>
-                    <span class="navbar-text">Welkom <?php if (isset($_SESSION['voornaam'])) {
-                                                            echo $_SESSION['voornaam'];
-                                                        } ?></span>
                     <li class="nav-item">
                         <a class="nav-link" href="uitloggen.php">Uitloggen</a>
                     </li>
                 </ul>
+                <div>
+                    <a href="" class="btn btn-outline-primary"><?php if (!isset($_SESSION['voornaam'])) {
+                                                                    echo "Welkom";
+                                                                } ?></a>
+                </div>
                 <div>
                     <a href="winkelmand.php" class="btn btn-outline-success">Winkelmand</a>
                 </div>
