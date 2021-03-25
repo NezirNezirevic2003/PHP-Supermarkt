@@ -31,10 +31,10 @@ include "./templates/header.php";
             <table class="table table-hover">
                 <thead class="text-center">
                     <tr>
-                        <th scope="col">Productnr</th>
                         <th scope="col">Productnaam</th>
                         <th scope="col">Productomschrijving</th>
                         <th scope="col">Productprijs</th>
+                        <th scope="col">Hoeveelheid</th>
                     </tr>
                 </thead>
                 <tbody class="text-center">
@@ -42,21 +42,15 @@ include "./templates/header.php";
                     if (isset($_SESSION['product'])) {
                         foreach ($_SESSION['product'] as $key => $value) {
                             echo
-                            "<tr>;
-                    <td></td>
+                            "<tr>
                     <td>$value[productnaam]</td>
                     <td>$value[productomschrijving]</td>
                     <td>$value[productprijs]</td>
+                    <td><input type='number' min='1' max='10'></td>
                     </tr>";
                         }
                     }
                     ?>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
                 </tbody>
             </table>
         </div>

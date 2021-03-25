@@ -12,13 +12,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </script>";
             } else {
                 $count = count($_SESSION['product']);
-                $_SESSION['product'][$count] = array('productnaam' => $_POST['productnaam'], 'productomschrijving' => $_POST['productomschrijving'], 'productprijs' => $_POST['productprijs'], 'Quantity' => 1);
+                $_SESSION['product'][$count] = array('artikelnr' => $_POST['artikelnr'], 'productnaam' => $_POST['productnaam'], 'productomschrijving' => $_POST['productomschrijving'], 'productprijs' => $_POST['productprijs'], 'Quantity' => 1);
                 echo "<script>alert('Product is succesvol toegevoegd');
             window.location.href='winkelmand.php';
             </script>";
             }
         } else {
-            $_SESSION['product'][0] = array('productnaam' => $_POST['productnaam'], 'productomschrijving' => $_POST['productomschrijving'], 'productprijs' => $_POST['productprijs'], 'Quantity' => 1);
+            $_SESSION['product'][0] = array('artikelnr' => $_POST['artikelnr'], 'productnaam' => $_POST['productnaam'], 'productomschrijving' => $_POST['productomschrijving'], 'productprijs' => $_POST['productprijs'], 'Quantity' => 1);
             echo "<script>alert('Product is succesvol toegevoegd');
             window.location.href='winkelmand.php';
             </script>";
