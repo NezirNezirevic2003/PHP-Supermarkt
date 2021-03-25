@@ -56,9 +56,13 @@
                     </li>
                 </ul>
                 <div>
-                    <a href="" class="btn btn-outline-primary"><?php if (!isset($_SESSION['voornaam'])) {
-                                                                    echo "Welkom";
-                                                                } ?></a>
+                    <a href="" class="btn btn-outline-primary mr-2"><?php if (!isset($_SESSION['voornaam'])) {
+                                                                        echo "Welkom";
+                                                                    } elseif (isset($_SESSION['voornaam'])) {
+                                                                        echo $_SESSION['voornaam'];
+                                                                    }
+
+                                                                    ?></a>
                 </div>
                 <div>
                     <a href="winkelmand.php" class="btn btn-outline-success">Winkelmand</a>
