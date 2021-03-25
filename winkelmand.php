@@ -41,7 +41,6 @@ include "./templates/header.php";
                     <?php
                     if (isset($_SESSION['product'])) {
                         foreach ($_SESSION['product'] as $key => $value) {
-                            print_r($value);
                             echo
                             "<tr>;
                     <td></td>

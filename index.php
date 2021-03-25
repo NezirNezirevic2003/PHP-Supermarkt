@@ -18,10 +18,6 @@ include "./templates/header.php";
         crossorigin="anonymous" />
 </head>
 
-<?php
-print_r($_SESSION['product'])
-?>
-
 <body>
     <div class="container">
         <div style="margin-top: 20px">
@@ -48,6 +44,7 @@ print_r($_SESSION['product'])
                                 <?php echo $product['productprijs']; ?></a>
                             <button class="btn btn-success" name="toevoegen" type="submit"><a><i style="color: white;"
                                         class="fas fa-shopping-cart"></i></a></button>
+                            <input type="hidden" name="artkelnr" value="<?php echo $product['artikelnr'] ?>">
                             <input type="hidden" name="productnaam" value="<?php echo $product['productnaam'] ?>">
                             <input type="hidden" name="productomschrijving"
                                 value="<?php echo $product['productomschrijving'] ?>">
