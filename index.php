@@ -27,79 +27,48 @@ include "./templates/header.php";
         </div>
     </div>
 
-    <?php
-    $producten = new Beheerder();
-    foreach ($producten->getProducten() as $product) { ?>
     <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card mt-4">
-                    <form action="winkelmand_manage.php" method="POST">
-                        <div class="card-body">
-                            <img><?php echo "<img class='card-img-top src='embed src='data:" . $product['mime'] . ";base64," . base64_encode($product['data']) . "'width='200' height='220'"; ?></img>
-                            <h5 class="card-title" name="productnaam"><?php echo $product['productnaam']; ?></h5>
-                            <p class="card-text" name="productomschrijving">
-                                <?php echo $product['productomschrijving']; ?></p>
-                            <a href="#" class="btn btn-primary" name="productprijs">€
-                                <?php echo $product['productprijs']; ?></a>
-                            <button class="btn btn-success" name="toevoegen" type="submit"><a><i style="color: white;"
-                                        class="fas fa-shopping-cart"></i></a></button>
-                            <input type="hidden" name="artkelnr" value="<?php echo $product['artikelnr'] ?>">
-                            <input type="hidden" name="productnaam" value="<?php echo $product['productnaam'] ?>">
-                            <input type="hidden" name="productomschrijving"
-                                value="<?php echo $product['productomschrijving'] ?>">
-                            <input type="hidden" name="productprijs" value="<?php echo $product['productprijs'] ?>">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <?php
+                            $producten = new Beheerder();
+                            foreach ($producten->getProducten() as $product) { ?>
+                            <div class="col-md-4">
+                                <form action="winkelmand_manage.php" method="POST">
+                                    <div class="card-body">
+                                        <img><?php echo "<img class='card-img-top src='embed src='data:" . $product['mime'] . ";base64," . base64_encode($product['data']) . "'width='300' height='220'"; ?></img>
+                                        <h5 class="card-title" name="productnaam">
+                                            <?php echo $product['productnaam']; ?>
+                                        </h5>
+                                        <p class="card-text" name="productomschrijving">
+                                            <?php echo $product['productomschrijving']; ?></p>
+                                        <a href="#" class="btn btn-primary" name="productprijs">€
+                                            <?php echo $product['productprijs']; ?></a>
+                                        <button class="btn btn-success" name="toevoegen" type="submit"><a><i
+                                                    style="color: white;" class="fas fa-shopping-cart"></i></a></button>
+                                        <input type="hidden" name="artkelnr"
+                                            value="<?php echo $product['artikelnr'] ?>">
+                                        <input type="hidden" name="productnaam"
+                                            value="<?php echo $product['productnaam'] ?>">
+                                        <input type="hidden" name="productomschrijving"
+                                            value="<?php echo $product['productomschrijving'] ?>">
+                                        <input type="hidden" name="productprijs"
+                                            value="<?php echo $product['productprijs'] ?>">
+                                    </div>
+                                </form>
+                            </div>
+                            <?php
+                            }
+                            ?>
                         </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card mt-4">
-                    <form action="winkelmand_manage.php" method="POST">
-                        <div class="card-body">
-                            <img><?php echo "<img class='card-img-top src='embed src='data:" . $product['mime'] . ";base64," . base64_encode($product['data']) . "'width='200' height='220'"; ?></img>
-                            <h5 class="card-title" name="productnaam"><?php echo $product['productnaam']; ?></h5>
-                            <p class="card-text" name="productomschrijving">
-                                <?php echo $product['productomschrijving']; ?></p>
-                            <a href="#" class="btn btn-primary" name="productprijs">€
-                                <?php echo $product['productprijs']; ?></a>
-                            <button class="btn btn-success" name="toevoegen" type="submit"><a><i style="color: white;"
-                                        class="fas fa-shopping-cart"></i></a></button>
-                            <input type="hidden" name="artkelnr" value="<?php echo $product['artikelnr'] ?>">
-                            <input type="hidden" name="productnaam" value="<?php echo $product['productnaam'] ?>">
-                            <input type="hidden" name="productomschrijving"
-                                value="<?php echo $product['productomschrijving'] ?>">
-                            <input type="hidden" name="productprijs" value="<?php echo $product['productprijs'] ?>">
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card mt-4">
-                    <form action="winkelmand_manage.php" method="POST">
-                        <div class="card-body">
-                            <img><?php echo "<img class='card-img-top src='embed src='data:" . $product['mime'] . ";base64," . base64_encode($product['data']) . "'width='200' height='220'"; ?></img>
-                            <h5 class="card-title" name="productnaam"><?php echo $product['productnaam']; ?></h5>
-                            <p class="card-text" name="productomschrijving">
-                                <?php echo $product['productomschrijving']; ?></p>
-                            <a href="#" class="btn btn-primary" name="productprijs">€
-                                <?php echo $product['productprijs']; ?></a>
-                            <button class="btn btn-success" name="toevoegen" type="submit"><a><i style="color: white;"
-                                        class="fas fa-shopping-cart"></i></a></button>
-                            <input type="hidden" name="artkelnr" value="<?php echo $product['artikelnr'] ?>">
-                            <input type="hidden" name="productnaam" value="<?php echo $product['productnaam'] ?>">
-                            <input type="hidden" name="productomschrijving"
-                                value="<?php echo $product['productomschrijving'] ?>">
-                            <input type="hidden" name="productprijs" value="<?php echo $product['productprijs'] ?>">
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <?php
-    }
-    ?>
 </body>
 
 </html>
