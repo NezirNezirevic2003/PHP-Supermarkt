@@ -61,7 +61,6 @@
                                                                     } elseif (isset($_SESSION['voornaam'])) {
                                                                         echo $_SESSION['voornaam'];
                                                                     }
-
                                                                     ?></a>
                 </div>
                 <div>

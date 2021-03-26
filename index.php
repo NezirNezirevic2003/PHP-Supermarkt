@@ -39,7 +39,7 @@ include "./templates/header.php";
                             <div class="col-md-4">
                                 <form action="winkelmand_manage.php" method="POST">
                                     <div class="card-body">
-                                        <img><?php echo "<img class='card-img-top src='embed src='data:" . $product['mime'] . ";base64," . base64_encode($product['data']) . "'width='300' height='220'"; ?></img>
+                                        <img><?php echo "<img class='card-img-top src='embed src='data:" . $product['mime'] . ";base64," . base64_encode($product['data']) . "'width='200' height='220'"; ?></img>
                                         <h5 class="card-title" name="productnaam">
                                             <?php echo $product['productnaam']; ?>
                                         </h5>
