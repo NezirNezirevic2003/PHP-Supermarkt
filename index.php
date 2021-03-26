@@ -26,7 +26,6 @@ include "./templates/header.php";
             </p>
         </div>
     </div>
-
     <div class="container">
         <div class="col-md-12">
             <div class="row">

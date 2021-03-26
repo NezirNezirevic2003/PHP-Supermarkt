@@ -27,34 +27,61 @@ include "./templates/header.php";
         </div>
     </div>
     <div class="container">
-        <div class="col-lg-8">
-            <table class="table table-hover">
-                <thead class="text-center">
-                    <tr>
-                        <th scope="col">Productnaam</th>
-                        <th scope="col">Productomschrijving</th>
-                        <th scope="col">Productprijs</th>
-                        <th scope="col">Hoeveelheid</th>
-                    </tr>
-                </thead>
-                <tbody class="text-center">
+        <div class="row">
+            <div class="col-lg-8">
+                <table class="table table-hover">
+                    <thead class="text-center">
+                        <tr>
+                            <th scope="col">Productnaam</th>
+                            <th scope="col">Productomschrijving</th>
+                            <th scope="col">Productprijs</th>
+                            <th scope="col">Aantaal</th>
+                            <th scope="col">Verwijder</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <?php
+                        $total = 0;
+                        if (isset($_SESSION['product'])) {
+                            foreach ($_SESSION['product'] as $key => $value) {
+                                $total = $total + intval($value['productprijs']);
+                                echo
+                                "<tr>
+                    <td>$value[productnaam]</td>
+                    <td>$value[productomschrijving]</td>
+                    <td>€ $value[productprijs]</td>
+                    <td><input class='text-center' type='number' value='$value[Quantity]' min='1' max='10'></td>
+                    <td>
+                    <form action='winkelmand_manage.php' method='POST'>
+                    <button name='verwijder' class='btn btn-danger'><i class='fas fa-trash'></i></button>
+                    <input type='hidden' name='productnaam' value='$value[productnaam]'>
+                    </form>
+                    </td>
+                    </tr>";
+                            }
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-4">
+                <div class="border bg-light rounded p-4">
+                    <h4 class="text-center">Totaal:</h4>
                     <?php
                     if (isset($_SESSION['product'])) {
                         foreach ($_SESSION['product'] as $key => $value) {
-                            echo
-                            "<tr>
-                    <td>$value[productnaam]</td>
-                    <td>$value[productomschrijving]</td>
-                    <td>$value[productprijs]</td>
-                    <td><input type='number' min='1' max='10'></td>
-                    </tr>";
+                            echo "<h6 class='text-center' style='margin-top: 20px;'>$value[productnaam] € $value[productprijs]</h6>";
                         }
                     }
                     ?>
-                </tbody>
-            </table>
+                    <hr class="my-4">
+                    <h3 class="text-center">€ <?php echo $total; ?></h3>
+                    <form action="">
+                        <button class="btn btn-primary btn-block">Bestellen</button>
+                    </form>
+                </div>
+            </div>
         </div>
-
     </div>
 
 </body>
