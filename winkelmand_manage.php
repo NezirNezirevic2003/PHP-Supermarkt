@@ -23,9 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($value['productnaam'] == $_POST['productnaam']) {
                 unset($_SESSION['product'][$key]);
                 $_SESSION['product'] = array_values($_SESSION['product']);
-                echo "<script>alert('Product is verwijderd');
-                window.location.href='winkelmand.php';
-                </script>";
+                header('location: winkelmand.php');
             }
         }
     }
