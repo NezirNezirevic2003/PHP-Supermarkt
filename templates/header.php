@@ -1,3 +1,6 @@
+<?php
+include "./count.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,9 +66,9 @@
                                                                     }
                                                                     ?></a>
                 </div>
-                <div>
-                    <a href="winkelmand.php" class="btn btn-outline-success">Winkelmand</a>
-                </div>
+            </div>
+            <div>
+                <a href="winkelmand.php" class="btn btn-outline-success">Winkelmand (<?php echo $count; ?>)</a>
             </div>
         </div>
 
