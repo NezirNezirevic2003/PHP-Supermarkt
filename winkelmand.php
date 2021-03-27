@@ -77,8 +77,15 @@ include "./templates/header.php";
                     <hr class="my-4">
                     <h3 class="text-center">€ <?php echo $total; ?></h3>
                     <form action="">
-                        <button class="btn btn-primary btn-block">Bestellen</button>
+                        <a href="" class="btn btn-primary btn-block" role="button"><i style="margin-right: 4px"
+                                class="far fa-credit-card"></i>Bestellen</a>
                     </form>
+                    <div class="mt-1">
+                        <i class="fab fa-cc-visa fa-2x"></i>
+                        <i class="fab fa-cc-paypal fa-2x"></i>
+                        <i class="fab fa-cc-mastercard fa-2x"></i>
+                        <i class="fab fa-cc-apple-pay fa-2x"></i>
+                    </div>
                 </div>
             </div>
         </div>
