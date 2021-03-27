@@ -21,22 +21,38 @@ class RegistratieValidator
             }
         }
 
-        $this->validateName();
+        $this->validateVoornaam();
+        $this->validateAchternaam();
         $this->validateEmail();
-        $this->validatePwd();
-        $this->validatePwdRepeat();
+        $this->validateWachtwoord();
+        $this->validateAdres();
+        $this->validatePlaats();
+        $this->validateZip();
         return $this->errors;
     }
 
-    private function validateName()
+    private function validateVoornaam()
     {
-        $val = trim($this->data['name']);
+        $val = trim($this->data['voornaam']);
 
         if (empty($val)) {
-            $this->addError('name', 'Gebruikersnaam moet ingevuld zijn.');
+            $this->addError('voornaam', 'Voornaam mag niet leeg zijn');
         } else {
-            if (!preg_match('/^[a-zA-Z0-9]{2,12}$/', $val)) {
-                $this->addError('name', 'Gebruikersnaam moet tussen 2-12 characters zijn.');
+            if (!preg_match('/^[a-zA-Z0-9]{3,20}$/', $val)) {
+                $this->addError('voornaam', 'Voornaam moet tussen 3-20 karakters zijn.');
+            }
+        }
+    }
+
+    private function validateAchternaam()
+    {
+        $val = trim($this->data['achternaam']);
+
+        if (empty($val)) {
+            $this->addError('achternaam', 'Achternaam mag niet leeg zijn');
+        } else {
+            if (!preg_match('/^[a-zA-Z0-9]{10,30}$/', $val)) {
+                $this->addError('achternaam', 'Achternaam moet tussen 10-30 karakters zijn.');
             }
         }
     }
@@ -54,85 +70,54 @@ class RegistratieValidator
         }
     }
 
-    private function validatePwd()
+    private function validateWachtwoord()
     {
-        $val = trim($this->data['pwd']);
+        $val = trim($this->data['wachtwoord']);
 
         if (empty($val)) {
-            $this->addError('pwd', 'Wachtwoord moet ingevuld zijn.');
+            $this->addError('wachtwoord', 'Wachtwoord moet ingevuld zijn.');
         } else {
-            if (!preg_match('/^[a-zA-Z0-9]{2,12}$/', $val)) {
-                $this->addError('pwd', 'Wachtwoord moet tussen de 3-60 characters zijn.');
+            if (!preg_match('/^[a-zA-Z0-9]{8,20}$/', $val)) {
+                $this->addError('wachtwoord', 'Wachtwoord moet tussen de 8-20 karakters zijn.');
             }
         }
     }
 
-    private function validatePwdRepeat()
+    private function validateAdres()
     {
-        $val = trim($this->data['pwdRepeat']);
-        $val2 = trim($this->data['pwdRepeat']);
+        $val = trim($this->data['adres']);
 
         if (empty($val)) {
-            $this->addError('pwdRepeat', 'Herhaal wachtwoord mag niet leeg zijn');
+            $this->addError('adres', 'Adres moet ingevuld zijn.');
         } else {
-            if (!$val === $val2) {
-                $this->addError('pwdRepeat', 'Wachtwoord moet matchen');
+            if (!preg_match('/^[a-zA-Z0-9]{10,40}$/', $val)) {
+                $this->addError('adres', 'Adres moet tussen de 10-40 karakters zijn.');
             }
         }
     }
 
-    private function addError($key, $val)
+    private function validatePlaats()
     {
-        $this->errors[$key] = $val;
-    }
-}
-
-class LoginValidator
-{
-    private $data;
-    private $errors = [];
-    private static $fields = ['name', 'pwd'];
-
-    public function __construct($post_data)
-    {
-        $this->data = $post_data;
-    }
-
-    public function validateForm()
-    {
-        foreach (self::$fields as $field) {
-            if (!array_key_exists($field, $this->data)) {
-                trigger_error("$field is not present in data");
-                return;
-            }
-        }
-        $this->validateName();
-        $this->validatePwd();
-        return $this->errors;
-    }
-
-    private function validateName()
-    {
-        $val = trim($this->data['name']);
+        $val = trim($this->data['plaats']);
 
         if (empty($val)) {
-            $this->addError('name', 'Naam mag niet leeg zijn.');
+            $this->addError('plaats', 'Plaatsnaam moet ingevuld zijn.');
         } else {
-            if (!preg_match('/^[a-zA-Z0-9]{2,12}$/', $val)) {
-                $this->addError('name', 'Gebruikersnaam moet tussen 2-12 characters zijn.');
+            if (!preg_match('/^[a-zA-Z0-9]{5,20}$/', $val)) {
+                $this->addError('plaats', 'plaats moet tussen de 5-20 karakters zijn.');
             }
         }
     }
 
-    private function validatePwd()
+    private function validateZip()
     {
-        $val = trim($this->data['pwd']);
+        $val = trim($this->data['zip']);
 
         if (empty($val)) {
-            $this->addError('pwd', 'Wachtwoord mag niet leeg zijn');
+            $this->addError('zip', 'Zipcode moet ingevuld zijn.');
         } else {
-            if (!preg_match('/^[a-zA-Z0-9]{2,12}$/', $val)) {
-                $this->addError('pwd', 'Wachtwoord moet tussen de 3-60 characters zijn.');
+            if (!preg_match('/^[a-zA-Z0-9]{4,6}$/', $val)) {
+                $this->addError('zip', 'zipcode moet tussen de 4-6 karakters zijn.');
             }
         }
     }
