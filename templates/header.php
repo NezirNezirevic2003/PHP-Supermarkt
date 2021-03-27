@@ -54,15 +54,13 @@ include "./count.php";
                             ?>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="uitloggen.php">Uitloggen</a>
-                    </li>
                 </ul>
                 <div>
                     <a href="" class="btn btn-outline-primary mr-2"><?php if (!isset($_SESSION['voornaam'])) {
                                                                         echo "Welkom";
                                                                     } elseif (isset($_SESSION['voornaam'])) {
                                                                         echo $_SESSION['voornaam'];
+                                                                        echo "<a href='uitloggen.php' class='btn btn-outline-danger mr-2'>Uitloggen</a>";
                                                                     }
                                                                     ?></a>
                 </div>

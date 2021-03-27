@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +11,6 @@
     <title>Document</title>
 </head>
 <?php
-session_start();
 require_once 'classes/beheerder.class.php';
 require_once 'classes/dbh.class.php';
 include "./templates/header.php";
