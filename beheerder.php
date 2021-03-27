@@ -11,9 +11,10 @@ session_start();
     <title>Document</title>
 </head>
 <?php
-require_once 'classes/beheerder.class.php';
-require_once 'classes/dbh.class.php';
+include "classes/beheerder.class.php";
+include_once "classes/dbh.class.php";
 include "./templates/header.php";
+include "./includes/autoload.inc.php";
 
 if (isset($_POST['submit'])) {
 
@@ -29,7 +30,7 @@ if (isset($_POST['submit'])) {
     <div class="container">
         <form class="mt-5" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Gebruikersnaam</label>
+                <label for="exampleInputEmail1" class="form-label">Geberuikersnaam</label>
                 <input type="text" name="gebruikersnaam" class="form-control" id="exampleInputEmail1"
                     aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text">Voer hier uw gebruikersnaam in</div>

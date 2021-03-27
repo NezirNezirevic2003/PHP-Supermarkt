@@ -17,6 +17,8 @@ include "./templates/header.php";
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
         crossorigin="anonymous" />
 </head>
+<?php
+?>
 
 <body>
     <div class="container">
