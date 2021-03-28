@@ -14,15 +14,21 @@ session_start();
 include "classes/beheerder.class.php";
 include_once "classes/dbh.class.php";
 include "./templates/header.php";
+require_once "./classes/login.validator.class.php";
 include "./includes/autoload.inc.php";
 
 if (isset($_POST['submit'])) {
 
-    $beheerder = new Beheerder();
-    $voornaam = $_POST['voornaam'];
-    $wachtwoord = $_POST['wachtwoord'];
-    $_SESSION['voornaam'] = $voornaam;
-    $beheerder->loginKlant($voornaam, $wachtwoord);
+    $validation = new LoginValidator($_POST);
+    $errors = $validation->validateForm();
+
+    if (!$errors) {
+        $beheerder = new Beheerder();
+        $voornaam = $_POST['voornaam'];
+        $wachtwoord = $_POST['wachtwoord'];
+        $_SESSION['voornaam'] = $voornaam;
+        $beheerder->loginKlant($voornaam, $wachtwoord);
+    }
 }
 ?>
 
@@ -32,13 +38,18 @@ if (isset($_POST['submit'])) {
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Voornaam</label>
                 <input type="text" name="voornaam" class="form-control" id="exampleInputEmail1"
-                    aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">Voer hier uw voornaam in</div>
+                    aria-describedby="emailHelp" placeholder="Voer hier uw voornaam in">
+                <div class="error">
+                    <?php echo $errors['voornaam'] ?? '' ?>
+                </div>
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Wachtwoord</label>
-                <input type="password" name="wachtwoord" class="form-control" id="exampleInputPassword1">
-                <div id="emailHelp" class="form-text">Voer hier uw wachtwoord</div>
+                <input type="password" name="wachtwoord" class="form-control" id="exampleInputPassword1"
+                    placeholder="Voer hier uw wachtwoord in">
+                <div class="error">
+                    <?php echo $errors['wachtwoord'] ?? '' ?>
+                </div>
             </div>
             <div class="mb-3">
                 <button type="submit" name="submit" class="btn btn-primary">Inloggen</button>

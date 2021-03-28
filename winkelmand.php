@@ -66,7 +66,7 @@ include "./templates/header.php";
             </div>
             <div class="col-lg-4">
                 <div class="border bg-light rounded p-4">
-                    <h4 class="text-center">Totaal:</h4>
+                    <h4 class="text-center">Afrekenen</h4>
                     <?php
                     if (isset($_SESSION['product'])) {
                         foreach ($_SESSION['product'] as $key => $value) {
@@ -75,7 +75,7 @@ include "./templates/header.php";
                     }
                     ?>
                     <hr class="my-4">
-                    <h3 class="text-center">€ <?php echo $total; ?></h3>
+                    <h3 class="text-center">Totaal: € <?php echo $total; ?></h3>
                     <form action="">
                         <a href="" class="btn btn-primary btn-block" role="button"><i style="margin-right: 4px"
                                 class="far fa-credit-card"></i>Bestellen</a>
