@@ -51,7 +51,7 @@ class RegistratieValidator
         if (empty($val)) {
             $this->addError('achternaam', 'Achternaam mag niet leeg zijn');
         } else {
-            if (!preg_match('/^[a-zA-Z0-9]{10,30}$/', $val)) {
+            if (!preg_match('/^[a-zA-Z0-9]{4,30}$/', $val)) {
                 $this->addError('achternaam', 'Achternaam moet tussen 10-30 karakters zijn.');
             }
         }
@@ -90,7 +90,7 @@ class RegistratieValidator
         if (empty($val)) {
             $this->addError('adres', 'Adres moet ingevuld zijn.');
         } else {
-            if (!preg_match('/^[a-zA-Z0-9]{10,40}$/', $val)) {
+            if (!preg_match('/^[a-zA-Z0-9]{5,40}$/', $val)) {
                 $this->addError('adres', 'Adres moet tussen de 10-40 karakters zijn.');
             }
         }

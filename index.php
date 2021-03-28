@@ -37,7 +37,7 @@ include "./templates/header.php";
                             <?php
                             $producten = new Beheerder();
                             foreach ($producten->getProducten() as $product) { ?>
-                            <div class="col-md-4">
+                            <div class="col-md-4 mt-1">
                                 <form action="winkelmand_manage.php" method="POST">
                                     <div class="card-body"
                                         style="border: 1px solid rgba(0,0,0,.125); margin-bottom: 30px; border-radius: .25rem">
