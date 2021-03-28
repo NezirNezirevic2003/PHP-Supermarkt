@@ -40,17 +40,19 @@ include "./templates/header.php";
                             <div class="col-md-4">
                                 <form action="winkelmand_manage.php" method="POST">
                                     <div class="card-body"
-                                        style="border: 1px solid rgba(0,0,0,.125); margin-bottom: 30px; border-radius: 10px">
+                                        style="border: 1px solid rgba(0,0,0,.125); margin-bottom: 30px; border-radius: .25rem">
                                         <img><?php echo "<img class='card-img-top src='embed src='data:" . $product['mime'] . ";base64," . base64_encode($product['data']) . "'width='200' height='220'"; ?></img>
                                         <h5 class="card-title" name="productnaam">
                                             <?php echo $product['productnaam']; ?>
                                         </h5>
                                         <p class="card-text" name="productomschrijving">
                                             <?php echo $product['productomschrijving']; ?></p>
-                                        <a href="#" class="btn btn-primary" name="productprijs">€
-                                            <?php echo $product['productprijs']; ?></a>
-                                        <button class="btn btn-success" name="toevoegen" type="submit"><a><i
-                                                    style="color: white;" class="fas fa-cart-plus"></i></a></button>
+                                        <p class="card-text" name='productprijs'>€
+                                            <?php echo $product['productprijs']; ?>
+                                        </p>
+                                        <button class="btn btn-success btn-block" name="toevoegen" type="submit"><a><i
+                                                    style="color: white;"
+                                                    class="fas fa-cart-plus fa-1x"></i></a></button>
                                         <input type="hidden" name="artkelnr"
                                             value="<?php echo $product['artikelnr'] ?>">
                                         <input type="hidden" name="productnaam"

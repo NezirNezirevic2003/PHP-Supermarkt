@@ -57,13 +57,13 @@ include "./count.php";
                 </ul>
                 <div>
                     <?php if (isset($_SESSION['voornaam'])) {
-                        echo "<a href='uitloggen.php' class='btn btn-outline-primary mr-2'>$_SESSION[voornaam]</a>";
+                        echo "<a href='dashboardKlant.php' class='btn btn-outline-primary mr-2'>$_SESSION[voornaam]</a>";
                         echo "<a href='uitloggen.php' class='btn btn-outline-danger mr-2'>Uitloggen</a>";
                     }
                     ?>
                     <?php
                     if (isset($_SESSION['gebruikersnaam'])) {
-                        echo "<a href='' class='btn btn-outline-primary mr-2'>$_SESSION[gebruikersnaam]</a>";
+                        echo "<a href='dashboardBeheerder.php' class='btn btn-outline-primary mr-2'>$_SESSION[gebruikersnaam]</a>";
                         echo "<a href='uitloggen.php' class='btn btn-outline-danger mr-2'>Uitloggen</a>";
                     }
                     ?>
