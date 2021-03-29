@@ -38,7 +38,7 @@ class RegistratieValidator
         if (empty($val)) {
             $this->addError('voornaam', 'Voornaam mag niet leeg zijn');
         } else {
-            if (!preg_match('/^[a-zA-Z0-9]{3,20}$/', $val)) {
+            if (!preg_match('/^[a-zA-Z]{3,20}$/', $val)) {
                 $this->addError('voornaam', 'Voornaam moet tussen 3-20 karakters zijn.');
             }
         }
@@ -51,7 +51,7 @@ class RegistratieValidator
         if (empty($val)) {
             $this->addError('achternaam', 'Achternaam mag niet leeg zijn');
         } else {
-            if (!preg_match('/^[a-zA-Z0-9]{4,30}$/', $val)) {
+            if (!preg_match('/^[a-zA-Z]{4,30}$/', $val)) {
                 $this->addError('achternaam', 'Achternaam moet tussen 10-30 karakters zijn.');
             }
         }
@@ -103,7 +103,7 @@ class RegistratieValidator
         if (empty($val)) {
             $this->addError('plaats', 'Plaatsnaam moet ingevuld zijn.');
         } else {
-            if (!preg_match('/^[a-zA-Z0-9]{5,20}$/', $val)) {
+            if (!preg_match('/^[a-zA-Z]{5,20}$/', $val)) {
                 $this->addError('plaats', 'plaats moet tussen de 5-20 karakters zijn.');
             }
         }
