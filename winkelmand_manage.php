@@ -7,11 +7,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $producten = array_column($_SESSION['product'], 'productnaam');
 
             if (in_array($_POST['productnaam'], $producten)) {
-                header('location: index.php');
+                header("location:" . $_SERVER['HTTP_REFERER']);
             } else {
                 $count = count($_SESSION['product']);
                 $_SESSION['product'][$count] = array('productnaam' => $_POST['productnaam'], 'productomschrijving' => $_POST['productomschrijving'], 'productprijs' => $_POST['productprijs'], 'Quantity' => 1);
-                header('location: index.php');
+                header("location:" . $_SERVER['HTTP_REFERER']);
             }
         } else {
             $_SESSION['product'][0] = array('productnaam' => $_POST['productnaam'], 'productomschrijving' => $_POST['productomschrijving'], 'productprijs' => $_POST['productprijs'], 'Quantity' => 1);
