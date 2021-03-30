@@ -1,10 +1,9 @@
 <?php
 session_start();
+
 include "./includes/autoload.inc.php";
-include "./classes/dbh.class.php";
 include "./templates/header.php";
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,13 +16,11 @@ include "./templates/header.php";
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
         crossorigin="anonymous" />
 </head>
-<?php
-?>
 
 <body>
     <div class="container">
         <div style="margin-top: 20px">
-            <h3>Producten</h3>
+            <h3>Groenten, fruit</h3>
             <hr class="my-4">
             </p>
         </div>
@@ -35,8 +32,9 @@ include "./templates/header.php";
                     <div class="col-md-12">
                         <div class="row">
                             <?php
+                            $categorie = "Groenten, fruit";
                             $producten = new Beheerder();
-                            foreach ($producten->getProducten() as $product) { ?>
+                            foreach ($producten->getCategorie1($categorie) as $product) { ?>
                             <div class="col-md-4 mt-1">
                                 <form action="winkelmand_manage.php" method="POST">
                                     <div class="card-body"

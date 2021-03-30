@@ -45,13 +45,8 @@ include "./count.php";
                             Categorieen
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <?php
-                            $categorieen = new Beheerder();
-                            foreach ($categorieen->getCategorieen() as $categorie) { ?>
-                            <a class="dropdown-item" href="#"><?php echo $categorie['categorienaam']; ?></a>
-                            <?php
-                            }
-                            ?>
+                            <a class="dropdown-item" href="groentefruit.php">Groenten, fruit</a>
+                            <a class="dropdown-item" href="vleesviskip.php">Vlees, vis en kip</a>
                         </div>
                     </li>
                 </ul>
