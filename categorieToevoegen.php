@@ -3,14 +3,19 @@ session_start();
 
 include "./includes/autoload.inc.php";
 require_once "./includes/auth.check.beheerder.php";
+require_once "./classes/categorie.validator.class.php";
 include "./templates/header.php";
 
 if (isset($_POST['submit'])) {
-    $categorie = new Beheerder;
 
-    $categorienaam = $_POST['categorienaam'];
+    $validation = new CategorieValidator($_POST);
+    $errors = $validation->validateForm();
 
-    $categorie->createCategorie($categorienaam);
+    if (!$errors) {
+        $categorie = new Beheerder;
+        $categorienaam = $_POST['categorienaam'];
+        $categorie->createCategorie($categorienaam);
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -30,6 +35,9 @@ if (isset($_POST['submit'])) {
                 <label for="inputAddress" class="form-label">Categorienaam</label>
                 <input type="text" name="categorienaam" class="form-control" id="categorienaam"
                     value="<?php echo $_POST['categorienaam'] ?? '' ?>">
+                <div class="error">
+                    <?php echo $errors['categorienaam'] ?? '' ?>
+                </div>
             </div>
             <div class="col-12 mt-3">
                 <button type="submit" name="submit" class="btn btn-success">Toevoegen</button>
