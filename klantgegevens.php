@@ -32,16 +32,16 @@ include "./templates/header.php";
             <table class="table table-striped table-dark">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Klantid</th>
-                        <th>Voornaam</th>
-                        <th>Achternaam</th>
-                        <th>Email</th>
-                        <th>Wachtwoord</th>
-                        <th>Adres</th>
-                        <th>Plaats</th>
-                        <th>Zip</th>
-                        <th>Update</th>
-                        <th>Delete</th>
+                        <th class="text-center">Klantid</th>
+                        <th class="text-center">Voornaam</th>
+                        <th class="text-center">Achternaam</th>
+                        <th class="text-center">Email</th>
+                        <th class="text-center">Wachtwoord</th>
+                        <th class="text-center">Adres</th>
+                        <th class="text-center">Plaats</th>
+                        <th class="text-center">Zip</th>
+                        <th class="text-center">Update</th>
+                        <th class="text-center">Delete</th>
                     </tr>
                 </thead>
                 <tbody id="tbody">
@@ -49,20 +49,20 @@ include "./templates/header.php";
                     $klanten = new Beheerder();
                     foreach ($klanten->getKlanten() as $klant) { ?>
                     <tr>
-                        <td><?php echo $klant['klantid']; ?></td>
-                        <td><?php echo $klant['voornaam']; ?></td>
-                        <td><?php echo $klant['achternaam']; ?></td>
-                        <td><?php echo $klant['email']; ?></td>
-                        <td><?php echo $klant['wachtwoord']; ?></td>
-                        <td><?php echo $klant['adres']; ?></td>
-                        <td><?php echo $klant['plaats']; ?></td>
-                        <td><?php echo $klant['zip']; ?></td>
-                        <td>
+                        <td class="text-center"><?php echo $klant['klantid']; ?></td>
+                        <td class="text-center"><?php echo $klant['voornaam']; ?></td>
+                        <td class="text-center"><?php echo $klant['achternaam']; ?></td>
+                        <td class="text-center"><?php echo $klant['email']; ?></td>
+                        <td class="text-center"><?php echo $klant['wachtwoord']; ?></td>
+                        <td class="text-center"><?php echo $klant['adres']; ?></td>
+                        <td class="text-center"><?php echo $klant['plaats']; ?></td>
+                        <td class="text-center"><?php echo $klant['zip']; ?></td>
+                        <td class="text-center">
                             <a href="editKlantgegevens.php?klantid=<?php echo $klant['klantid']; ?>"
                                 class="btn btn-primary" role="button"><i style="margin-right: 4px"
                                     class="fas fa-pen"></i>Update</a>
                         </td>
-                        <td>
+                        <td class="text-center">
                             <a href="klant.process.php?klantid=<?php echo $klant['klantid']; ?>&send=del"
                                 class="btn btn-danger" role="button" aria-pressed="true"><i style="margin-right: 4px"
                                     class="fas fa-trash"></i>Delete</a>

@@ -35,10 +35,10 @@ include "./templates/header.php";
             <table class="table table-striped table-dark">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Categorieid</th>
-                        <th>Categorienaam</th>
-                        <th>Update</th>
-                        <th>Delete</th>
+                        <th class="text-center">Categorieid</th>
+                        <th class="text-center">Categorienaam</th>
+                        <th class="text-center">Update</th>
+                        <th class="text-center">Delete</th>
                     </tr>
                 </thead>
                 <tbody id="tbody">
@@ -46,14 +46,14 @@ include "./templates/header.php";
                     $categorieen = new Beheerder();
                     foreach ($categorieen->getCategorieen() as $categorie) { ?>
                     <tr>
-                        <td><?php echo $categorie['categorieid']; ?></td>
-                        <td><?php echo $categorie['categorienaam']; ?></td>
-                        <td>
+                        <td class="text-center"><?php echo $categorie['categorieid']; ?></td>
+                        <td class="text-center"><?php echo $categorie['categorienaam']; ?></td>
+                        <td class="text-center">
                             <a href="editCategoriegegevens.php?categorieid=<?php echo $categorie['categorieid']; ?>"
                                 class="btn btn-primary" role="button"><i style="margin-right: 4px"
                                     class="fas fa-pen"></i>Update</a>
                         </td>
-                        <td>
+                        <td class="text-center">
                             <a href="categorie.process.php?categorieid=<?php echo $categorie['categorieid']; ?>&send=del"
                                 class="btn btn-danger" role="button" aria-pressed="true"><i style="margin-right: 4px"
                                     class="fas fa-trash"></i>Delete</a>

@@ -36,13 +36,13 @@ include "./templates/header.php";
             <table class="table table-striped table-dark">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Medewerkerid</th>
-                        <th>Voornaam</th>
-                        <th>Achternaam</th>
-                        <th>Functie</th>
-                        <th>Salaris</th>
-                        <th>Update</th>
-                        <th>Delete</th>
+                        <th class="text-center">Medewerkerid</th>
+                        <th class="text-center">Voornaam</th>
+                        <th class="text-center">Achternaam</th>
+                        <th class="text-center">Functie</th>
+                        <th class="text-center">Salaris</th>
+                        <th class="text-center">Update</th>
+                        <th class="text-center">Delete</th>
                     </tr>
                 </thead>
                 <tbody id="tbody">
@@ -50,17 +50,17 @@ include "./templates/header.php";
                     $medewerkers = new Beheerder();
                     foreach ($medewerkers->getMedewerkers() as $medewerker) { ?>
                     <tr>
-                        <td><?php echo $medewerker['medewerkerid']; ?></td>
-                        <td><?php echo $medewerker['voornaam']; ?></td>
-                        <td><?php echo $medewerker['achternaam']; ?></td>
-                        <td><?php echo $medewerker['functie']; ?></td>
-                        <td><?php echo $medewerker['salaris']; ?></td>
-                        <td>
+                        <td class="text-center"><?php echo $medewerker['medewerkerid']; ?></td>
+                        <td class="text-center"><?php echo $medewerker['voornaam']; ?></td>
+                        <td class="text-center"><?php echo $medewerker['achternaam']; ?></td>
+                        <td class="text-center"><?php echo $medewerker['functie']; ?></td>
+                        <td class="text-center"><?php echo $medewerker['salaris']; ?></td>
+                        <td class="text-center">
                             <a href="editMedewerkers.php?medewerkerid=<?php echo $medewerker['medewerkerid']; ?>"
                                 class="btn btn-primary" role="button"><i style="margin-right: 4px"
                                     class="fas fa-pen"></i>Update</a>
                         </td>
-                        <td>
+                        <td class="text-center">
                             <a href="medewerker.process.php?medewerkerid=<?php echo $medewerker['medewerkerid']; ?>&send=del"
                                 class="btn btn-danger" role="button" aria-pressed="true"><i style="margin-right: 4px"
                                     class="fas fa-trash"></i>Delete</a>

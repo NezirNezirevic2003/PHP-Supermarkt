@@ -36,13 +36,13 @@ include "./templates/header.php";
             <table class="table table-striped table-dark">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Productafbeelding</th>
-                        <th>Artikelnr</th>
-                        <th>Productnaam</th>
-                        <th>Productomschrijving</th>
-                        <th>Productprijs</th>
-                        <th>Update</th>
-                        <th>Delete</th>
+                        <th class="text-center">Productafbeelding</th>
+                        <th class="text-center">Artikelnr</th>
+                        <th class="text-center">Productnaam</th>
+                        <th class="text-center">Productomschrijving</th>
+                        <th class="text-center">Productprijs</th>
+                        <th class="text-center">Update</th>
+                        <th class="text-center">Delete</th>
                     </tr>
                 </thead>
                 <tbody id="tbody">
@@ -50,18 +50,19 @@ include "./templates/header.php";
                     $producten = new Beheerder();
                     foreach ($producten->getProducten() as $product) { ?>
                     <tr>
-                        <td><?php echo "<img class='card-img-top src='embed src='data:" . $product['mime'] . ";base64," . base64_encode($product['data']) . "'width='90' height='200'"; ?>
+                        <td class="text-center">
+                            <?php echo "<img class='card-img-top src='embed src='data:" . $product['mime'] . ";base64," . base64_encode($product['data']) . "'width='90' height='200'"; ?>
                         </td>
-                        <td><?php echo $product['artikelnr']; ?></td>
-                        <td><?php echo $product['productnaam']; ?></td>
-                        <td><?php echo $product['productomschrijving']; ?></td>
-                        <td>€ <?php echo $product['productprijs']; ?></td>
-                        <td>
+                        <td class="text-center"><?php echo $product['artikelnr']; ?></td>
+                        <td class="text-center"><?php echo $product['productnaam']; ?></td>
+                        <td class="text-center"><?php echo $product['productomschrijving']; ?></td>
+                        <td class="text-center">€ <?php echo $product['productprijs']; ?></td>
+                        <td class="text-center">
                             <a href="editProductgegevens.php?artikelnr=<?php echo $product['artikelnr']; ?>"
                                 class="btn btn-primary" role="button"><i style="margin-right: 4px"
                                     class="fas fa-pen"></i>Update</a>
                         </td>
-                        <td>
+                        <td class="text-center">
                             <a href="product.process.php?artikelnr=<?php echo $product['artikelnr']; ?>&send=del"
                                 class="btn btn-danger" role="button" aria-pressed="true"><i style="margin-right: 4px"
                                     class="fas fa-trash"></i>Delete</a>
