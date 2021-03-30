@@ -35,8 +35,8 @@ class ProductValidator
         if (empty($val)) {
             $this->addError('productnaam', 'Productnaam mag niet leeg zijn');
         } else {
-            if (!preg_match('/^[a-zA-Z]{4,20}$/', $val)) {
-                $this->addError('productnaam', 'Productnaam moet tussen 4-20 karakters zijn en mag geen nummers bevatten');
+            if (!preg_match('/^[a-zA-Z]{2,30}$/', $val)) {
+                $this->addError('productnaam', 'Productnaam moet tussen 2-30 karakters zijn en mag geen nummers bevatten');
             }
         }
     }
@@ -48,8 +48,8 @@ class ProductValidator
         if (empty($val)) {
             $this->addError('productomschrijving', 'Productomschrijving mag niet leeg zijn');
         } else {
-            if (!preg_match('/^[a-zA-Z]{4,20}$/', $val)) {
-                $this->addError('productomschrijving', 'Productomschrijving moet tussen 4-20 karakters zijn en mag geen nummers bevatten.');
+            if (!preg_match('/^[a-zA-Z]{2,30}$/', $val)) {
+                $this->addError('productomschrijving', 'Productomschrijving moet tussen 2-30 karakters zijn en mag geen nummers bevatten.');
             }
         }
     }
@@ -70,8 +70,8 @@ class ProductValidator
         if (empty($val)) {
             $this->addError('productprijs', 'productprijs mag niet leeg zijn');
         } else {
-            if (!preg_match('/^[0-9]{4,20}$/', $val)) {
-                $this->addError('productprijs', 'Productprijs moet tussen 4-7 nummers zijn en mag geen letters bevatten.');
+            if (!preg_match('/^[0-9]{2,8}$/', $val)) {
+                $this->addError('productprijs', 'Productprijs moet tussen 2-8 nummers zijn en mag geen letters bevatten.');
             }
         }
     }
