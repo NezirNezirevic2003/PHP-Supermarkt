@@ -38,7 +38,7 @@ include "./templates/header.php";
                 <div class="card-body">
                     <h5 class="card-title">Klantgegevens wijzigen, toevoegen of verwijderen</h5>
                     <p class="card-text">Hier kunt u klantgegevens beheren</p>
-                    <a href="klantgegevens.php" class="btn btn-success"><i style="margin-right: 4px"
+                    <a href="klantgegevens.php" class="btn btn-success btn-block"><i style="margin-right: 4px"
                             class="fas fa-users"></i>Klantgegevens</a>
                 </div>
             </div>
@@ -46,7 +46,7 @@ include "./templates/header.php";
                 <div class="card-body">
                     <h5 class="card-title">Producten wijzigen,toevoegen of verwijderen</h5>
                     <p class="card-text">Hier kunt u producten beheren</p>
-                    <a href="productgegevens.php" class="btn btn-primary"><i style="margin-right: 4px"
+                    <a href="productgegevens.php" class="btn btn-primary btn-block"><i style="margin-right: 4px"
                             class="fas fa-drumstick-bite"></i>Producten</a>
                 </div>
             </div>
@@ -54,7 +54,7 @@ include "./templates/header.php";
                 <div class="card-body">
                     <h5 class="card-title">Medewerkers wijzigen, toevoegen of verwijderen</h5>
                     <p class="card-text">Hier kunt u medewerkers beheren</p>
-                    <a href="medewerkers.php" class="btn btn-secondary"><i style="margin-right: 4px;"
+                    <a href="medewerkers.php" class="btn btn-secondary btn-block"><i style="margin-right: 4px;"
                             class="fas fa-users-cog"></i>Medewerkers</a>
                 </div>
             </div>
@@ -62,7 +62,7 @@ include "./templates/header.php";
                 <div class="card-body">
                     <h5 class="card-title">Categorien wijzigen, toevoegen of verwijderen</h5>
                     <p class="card-text">Hier kunt u categorieen beheren</p>
-                    <a href="categoriegegevens.php" class="btn btn-danger"><i style="margin-right: 4px;"
+                    <a href="categoriegegevens.php" class="btn btn-danger btn-block"><i style="margin-right: 4px;"
                             class="fas fa-list"></i>Categorieen</a>
                 </div>
             </div>

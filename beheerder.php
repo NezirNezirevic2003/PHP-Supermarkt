@@ -51,8 +51,8 @@ if (isset($_POST['submit'])) {
                     <?php echo $errors['wachtwoord'] ?? '' ?>
                 </div>
             </div>
-            <div class="mb-3">
-                <button type="submit" name="submit" class="btn btn-primary">Inloggen</button>
+            <div class="mb-3 mt-4">
+                <button type="submit" name="submit" class="btn btn-primary btn-block">Inloggen</button>
             </div>
         </form>
     </div>
