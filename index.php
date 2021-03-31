@@ -47,7 +47,7 @@ include "./templates/header.php";
                                         </h5>
                                         <p class="card-text" name="productomschrijving">
                                             <?php echo $product['productomschrijving']; ?></p>
-                                        <p class="card-text" name='productprijs'>€
+                                        <p class="card-text" name='productprijs'> €
                                             <?php echo $product['productprijs']; ?>
                                         </p>
                                         <button class="btn btn-success btn-block" name="toevoegen" type="submit"><a><i
