@@ -36,6 +36,7 @@ include "./templates/header.php";
                             <th scope="col">Productomschrijving</th>
                             <th scope="col">Productprijs</th>
                             <th scope="col">Aantaal</th>
+                            <th scope="col">Totaal</th>
                             <th scope="col">Verwijder</th>
                         </tr>
                     </thead>
@@ -51,6 +52,7 @@ include "./templates/header.php";
                     <td>$value[productomschrijving]</td>
                     <td>€ $value[productprijs]</td>
                     <td><input class='text-center' type='number' value='$value[Quantity]' min='1' max='10'></td>
+                    <td class='itotal'></td>
                     <td>
                     <form action='winkelmand_manage.php' method='POST'>
                     <button name='verwijder' class='btn btn-danger'><i class='fas fa-trash'></i></button>
@@ -72,14 +74,18 @@ include "./templates/header.php";
                         foreach ($_SESSION['product'] as $key => $value) {
                             echo "<h6 class='text-center' style='margin-top: 20px;'>$value[productnaam] € $value[productprijs]</h6>";
                         }
+                        echo "<hr class='my-4'>
+                    <h3 class='text-center'>Totaal: € $total</h3>
+                    <form action=''>
+                    <a href='' class='btn btn-primary btn-block' role='button'><i style='margin-right: 4px'
+                    class='far fa-credit-card'></i>Bestellen</a>
+                    <input type='hidden' name='productnaam' value='$value[productnaam]'>
+                    <input type='hidden' name='productnaam' value='$value[productomschrijving]'>
+                    <input type='hidden' name='productnaam' value='$value[productprijs]'>
+                    </form>";
                     }
                     ?>
-                    <hr class="my-4">
-                    <h3 class="text-center">Totaal: € <?php echo $total; ?></h3>
-                    <form action="">
-                        <a href="" class="btn btn-primary btn-block" role="button"><i style="margin-right: 4px"
-                                class="far fa-credit-card"></i>Bestellen</a>
-                    </form>
+
                     <div class="mt-1">
                         <i class="fab fa-cc-visa fa-2x"></i>
                         <i class="fab fa-cc-paypal fa-2x"></i>
