@@ -81,13 +81,12 @@ include "./templates/header.php";
                     ?>
                     <hr class='my-4'>
                     <h3 class='text-center'>Totaal: € <?php echo $total; ?></h3>
-                    <form action='bestelling_manage.php'>
+                    <form action='bestelling_manage.php' method="POST">
                         <input type='hidden' name='productnaam' value='<?php echo $value['productnaam']; ?>'>
                         <input type='hidden' name='productomschrijving'
                             value='<?php echo $value['productomschrijving']; ?>'>
                         <input type='hidden' name='productprijs' value='<?php echo $value['productprijs']; ?>'>
                         <input type='hidden' name='aantaal' value='<?php echo $value['Quantity']; ?>'>
-                        <input type='hidden' name='totaal' value='<?php echo $total ?>'>
                         <button class="btn btn-primary btn-block" name="bestellen" type="submit"><a><i
                                     style="color: white; margin-right: 4px;"
                                     class="far fa-credit-card 1x"></i>Bestellen</a></button>
