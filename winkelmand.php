@@ -87,8 +87,8 @@ include "./templates/header.php";
                             value='<?php echo $value['productomschrijving']; ?>'>
                         <input type='hidden' name='productprijs' value='<?php echo $value['productprijs']; ?>'>
                         <input type='hidden' name='aantaal' value='<?php echo $value['Quantity']; ?>'>
-                        <button class="btn btn-primary btn-block" name="bestellen" type="submit"><a><i
-                                    style="color: white; margin-right: 4px;"
+                        <button href="bestelling.php" class="btn btn-primary btn-block" name="bestellen"
+                            type="submit"><a><i style="color: white; margin-right: 4px;"
                                     class="far fa-credit-card 1x"></i>Bestellen</a></button>
                     </form>
                     <div class="mt-1">
@@ -101,7 +101,6 @@ include "./templates/header.php";
             </div>
         </div>
     </div>
-
 </body>
 
 </html>
