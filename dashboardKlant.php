@@ -49,6 +49,7 @@ include "./templates/header.php";
                     <th scope="col">Productnaam</th>
                     <th scope="col">Productomschrijving</th>
                     <th scope="col">Productprijs</th>
+                    <th scope="col">Verwijderen</th>
                 </tr>
             </thead>
             <tbody class="text-center">
@@ -61,6 +62,11 @@ include "./templates/header.php";
                     <td><?php echo $bestelling['productnaam']; ?></td>
                     <td><?php echo $bestelling['productomschrijving']; ?></td>
                     <td>€ <?php echo $bestelling['productprijs']; ?></td>
+                    <td class="text-center">
+                        <a href="bestelling.process.php?bestellingnr=<?php echo $bestelling['bestellingnr']; ?>&send=del"
+                            class="btn btn-danger" role="button" aria-pressed="true"><i style="margin-right: 4px"
+                                class="fas fa-trash"></i></a>
+                    </td>
                 </tr>
                 <?php
                 }

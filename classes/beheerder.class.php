@@ -4,6 +4,14 @@ include_once 'dbh.class.php';
 
 class Beheerder extends Dbh
 {
+    public function deleteBestelling($bestellingnr)
+    {
+        $sql = "DELETE FROM bestelling WHERE bestellingnr = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$bestellingnr]);
+        header("location:" . $_SERVER['HTTP_REFERER']);
+    }
+
     public function getBestellingen()
     {
         $sql = "SELECT * FROM bestelling";
@@ -98,6 +106,14 @@ class Beheerder extends Dbh
         while ($result = $stmt->fetchAll()) {
             return $result;
         }
+    }
+
+    public function updateProduct($productnaam, $productomschrijving, $productprijs, $artikelnr)
+    {
+        $sql = "UPDATE product SET productnaam = ?, productomschrijving = ?, productprijs = ? WHERE artikelnr = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$productnaam, $productomschrijving, $productprijs, $artikelnr]);
+        header('location: productgegevens.php');
     }
 
     public function deleteProduct($artikelnr)

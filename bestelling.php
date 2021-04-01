@@ -36,11 +36,11 @@ include "./templates/header.php";
         <table class="table table-hover">
             <thead class="text-center">
                 <tr>
-                    <th scope="col">Productnaam</th>
-                    <th scope="col">Productomschrijving</th>
-                    <th scope="col">Productprijs</th>
-                    <th scope="col">Aantaal</th>
-                    <th scope="col">Totaal</th>
+                    <th class="text-center" scope="col">Productnaam</th>
+                    <th class="text-center" scope="col">Productomschrijving</th>
+                    <th class="text-center" scope="col">Productprijs</th>
+                    <th class="text-center" scope="col">Aantaal</th>
+                    <th class="text-center" scope="col">Totaal</th>
                 </tr>
             </thead>
             <tbody class="text-center">
@@ -50,11 +50,11 @@ include "./templates/header.php";
                     foreach ($_SESSION['bestelling'] as $key => $value) { ?>
                 <?php $total = $total + intval($value['productprijs']); ?>
                 <tr>
-                    <td><?php echo $value['productnaam']; ?></td>
-                    <td><?php echo $value['productomschrijving']; ?></td>
-                    <td>€ <?php echo $value['productprijs']; ?></td>
-                    <td><?php echo $value['Quantity']; ?></td>
-                    <td>€ <?php echo $total ?></td>
+                    <td class="text-center"><?php echo $value['productnaam']; ?></td>
+                    <td class="text-center"><?php echo $value['productomschrijving']; ?></td>
+                    <td class="text-center">€ <?php echo $value['productprijs']; ?></td>
+                    <td class="text-center"><?php echo $value['Quantity']; ?></td>
+                    <td class="text-center">€ <?php echo $total ?></td>
                 </tr>
                 <?php
                     }
@@ -83,7 +83,6 @@ include "./templates/header.php";
             <input type="hidden" name="aantaal" value="<?php echo $value['Quantity']; ?>">
             <button class="btn btn-success btn-block" name="submit" type="submit">Bestellen</button>
         </form>
-
 </body>
 
 </html>
