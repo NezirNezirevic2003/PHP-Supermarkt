@@ -45,6 +45,7 @@ include "./templates/header.php";
             <thead class="text-center">
                 <tr>
                     <th scope="col">Bestellingnr</th>
+                    <th scope="col">Besteldatum</th>
                     <th scope="col">Productnaam</th>
                     <th scope="col">Productomschrijving</th>
                     <th scope="col">Productprijs</th>
@@ -56,6 +57,7 @@ include "./templates/header.php";
                 foreach ($bestellingen->getBestellingen() as $bestelling) { ?>
                 <tr>
                     <td><?php echo $bestelling['bestellingnr']; ?></td>
+                    <td><?php echo $bestelling['besteldatum']; ?></td>
                     <td><?php echo $bestelling['productnaam']; ?></td>
                     <td><?php echo $bestelling['productomschrijving']; ?></td>
                     <td>€ <?php echo $bestelling['productprijs']; ?></td>

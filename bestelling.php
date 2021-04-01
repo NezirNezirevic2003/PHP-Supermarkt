@@ -66,15 +66,17 @@ include "./templates/header.php";
         if (isset($_POST['submit'])) {
 
             $beheerder = new Beheerder();
+            $besteldatum = $_POST['besteldatum'];
             $productnaam = $_POST['productnaam'];
             $productomschrijving = $_POST['productomschrijving'];
             $productprijs = $_POST['productprijs'];
 
-            $beheerder->createBestelling($productnaam, $productomschrijving, $productprijs);
+            $beheerder->createBestelling($besteldatum, $productnaam, $productomschrijving, $productprijs);
         }
 
         ?>
         <form action="<?php echo $_SERVER['PHP_SELF']  ?>" method="POST">
+            <input type="hidden" name="besteldatum" value="<?php echo date("d.m.Y"); ?>">
             <input type="hidden" name="productnaam" value="<?php echo $value['productnaam']; ?>">
             <input type="hidden" name="productomschrijving" value="<?php echo $value['productomschrijving']; ?>">
             <input type="hidden" name="productprijs" value="<?php echo $value['productprijs']; ?>">

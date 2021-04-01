@@ -15,11 +15,11 @@ class Beheerder extends Dbh
         }
     }
 
-    public function createBestelling($productnaam, $productomschrijving, $productprijs)
+    public function createBestelling($besteldatum, $productnaam, $productomschrijving, $productprijs)
     {
-        $sql = "INSERT INTO bestelling(productnaam, productomschrijving, productprijs) VALUES (?,?,?)";
+        $sql = "INSERT INTO bestelling(besteldatum, productnaam, productomschrijving, productprijs) VALUES (?,?,?,?)";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$productnaam, $productomschrijving, $productprijs]);
+        $stmt->execute([$besteldatum, $productnaam, $productomschrijving, $productprijs]);
     }
 
     public function deleteCategorie($categorieid)
