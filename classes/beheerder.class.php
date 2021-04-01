@@ -4,6 +4,24 @@ include_once 'dbh.class.php';
 
 class Beheerder extends Dbh
 {
+    public function getBestellingen()
+    {
+        $sql = "SELECT * FROM bestelling";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+
+        while ($result = $stmt->fetchAll()) {
+            return $result;
+        }
+    }
+
+    public function createBestelling($productnaam, $productomschrijving, $productprijs)
+    {
+        $sql = "INSERT INTO bestelling(productnaam, productomschrijving, productprijs) VALUES (?,?,?)";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$productnaam, $productomschrijving, $productprijs]);
+    }
+
     public function deleteCategorie($categorieid)
     {
         $sql = "DELETE FROM categorieen WHERE categorieid = ?";

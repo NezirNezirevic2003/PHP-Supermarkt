@@ -33,9 +33,38 @@ include "./templates/header.php";
                     style="margin-right: 4px" class="fas fa-pen"></i>Wachtwoord wijzigen</a>
         </div>
     </div>
-
-
-
+    <div class="container">
+        <div style="margin-top: 20px">
+            <h3>Uw Bestellingen</h3>
+            <hr class="my-4">
+            </p>
+        </div>
+    </div>
+    <div class="container">
+        <table class="table table-hover">
+            <thead class="text-center">
+                <tr>
+                    <th scope="col">Bestellingnr</th>
+                    <th scope="col">Productnaam</th>
+                    <th scope="col">Productomschrijving</th>
+                    <th scope="col">Productprijs</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                <?php
+                $bestellingen = new Beheerder();
+                foreach ($bestellingen->getBestellingen() as $bestelling) { ?>
+                <tr>
+                    <td><?php echo $bestelling['bestellingnr']; ?></td>
+                    <td><?php echo $bestelling['productnaam']; ?></td>
+                    <td><?php echo $bestelling['productomschrijving']; ?></td>
+                    <td>€ <?php echo $bestelling['productprijs']; ?></td>
+                </tr>
+                <?php
+                }
+                ?>
+            </tbody>
+        </table>
 </body>
 
 </html>

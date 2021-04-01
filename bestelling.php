@@ -2,6 +2,7 @@
 session_start();
 
 include "./includes/autoload.inc.php";
+require_once "./includes/auth.check.klant.php";
 include "./templates/header.php";
 ?>
 
@@ -39,6 +40,7 @@ include "./templates/header.php";
                     <th scope="col">Productomschrijving</th>
                     <th scope="col">Productprijs</th>
                     <th scope="col">Aantaal</th>
+                    <th scope="col">Totaal</th>
                 </tr>
             </thead>
             <tbody class="text-center">
@@ -52,6 +54,7 @@ include "./templates/header.php";
                     <td><?php echo $value['productomschrijving']; ?></td>
                     <td>€ <?php echo $value['productprijs']; ?></td>
                     <td><?php echo $value['Quantity']; ?></td>
+                    <td>€ <?php echo $total ?></td>
                 </tr>
                 <?php
                     }
@@ -59,6 +62,26 @@ include "./templates/header.php";
                 ?>
             </tbody>
         </table>
+        <?php
+        if (isset($_POST['submit'])) {
+
+            $beheerder = new Beheerder();
+            $productnaam = $_POST['productnaam'];
+            $productomschrijving = $_POST['productomschrijving'];
+            $productprijs = $_POST['productprijs'];
+
+            $beheerder->createBestelling($productnaam, $productomschrijving, $productprijs);
+        }
+
+        ?>
+        <form action="<?php echo $_SERVER['PHP_SELF']  ?>" method="POST">
+            <input type="hidden" name="productnaam" value="<?php echo $value['productnaam']; ?>">
+            <input type="hidden" name="productomschrijving" value="<?php echo $value['productomschrijving']; ?>">
+            <input type="hidden" name="productprijs" value="<?php echo $value['productprijs']; ?>">
+            <input type="hidden" name="aantaal" value="<?php echo $value['Quantity']; ?>">
+            <button class="btn btn-success btn-block" name="submit" type="submit">Bestellen</button>
+        </form>
+
 </body>
 
 </html>
