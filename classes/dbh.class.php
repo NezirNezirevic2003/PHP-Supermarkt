@@ -1,10 +1,16 @@
 <?php
 class Dbh
 {
-    private $host = 'localhost';
-    private $user = 'root';
-    private $pwd = '';
-    private $dbName = 'supermarkt';
+    // Development connectie
+    // private $host = 'localhost';
+    // private $user = 'root';
+    // private $pwd = '';
+    // private $dbName = 'supermarkt';
+
+    private $host = 'remotemysql.com';
+    private $user = 'wHGCclw4wb';
+    private $pwd = 'JQcRi9SsiX';
+    private $dbName = 'wHGCclw4wb';
 
     public function connect()
     {
